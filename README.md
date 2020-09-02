@@ -11,7 +11,7 @@ DER: https://app.lucidchart.com/invitations/accept/5e8c3831-0e08-4336-99b6-a6f24
 
 Descrição das tabelas:\
 -Bag: É a tabela principal. Nela temos todas as informações de cada pokémon capturado.\
--PokeDex: Contém informações de cada espécie de pokemon (informações retiradas do https://www.serebii.net/pokemongo/pokemon/).\
+-PokeDex: Contém informações de cada espécie de pokemon (informações retiradas do https://www.serebii.net/pokemongo/pokemon/). <br/>
 -Cidade: Contém informações da cidade em que o pokemon foi capturado. 
 
 Critérios:\
