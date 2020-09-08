@@ -1,0 +1,14 @@
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\PokeDex_Estudo.Context.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\EntityFramework.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\EntityFramework.xml
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.csprojAssemblyReference.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.csproj.CoreCompileInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.csproj.CopyComplete
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\PokeDex_Estudo.Context.dll.config
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\bin\Debug\PokeDex_Estudo.Context.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.Migrations.InitialCreate.resources
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo.Context\obj\Debug\PokeDex_Estudo.Context.csproj.GenerateResource.cache

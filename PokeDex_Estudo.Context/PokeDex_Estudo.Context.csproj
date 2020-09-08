@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0D190175-487F-489C-93F2-490C80608BB9}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>PokeDex_Estudo.Context</RootNamespace>
     <AssemblyName>PokeDex_Estudo.Context</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -53,18 +56,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\202009081226331_InitialCreate.cs" />
+    <Compile Include="Migrations\202009081226331_InitialCreate.designer.cs">
+      <DependentUpon>202009081226331_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Bag.cs" />
     <Compile Include="Models\Cidade.cs" />
     <Compile Include="Models\PokeDex.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="PokeDexContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Types\BagTypeConfiguration.cs" />
     <Compile Include="Types\CidadeTypeConfiguration.cs" />
-    <Compile Include="Types\PokeDexConfigurationType.cs" />
+    <Compile Include="Types\PokeDexTypeConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009081226331_InitialCreate.resx">
+      <DependentUpon>202009081226331_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

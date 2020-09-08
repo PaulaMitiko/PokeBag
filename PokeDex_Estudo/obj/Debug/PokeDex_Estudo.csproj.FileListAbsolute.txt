@@ -1,0 +1,15 @@
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\obj\Debug\PokeDex_Estudo.csprojAssemblyReference.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\obj\Debug\PokeDex_Estudo.csproj.CoreCompileInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\PokeDex_Estudo.exe.config
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\PokeDex_Estudo.exe
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\PokeDex_Estudo.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\EntityFramework.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\PokeDex_Estudo.Context.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\EntityFramework.xml
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\obj\Debug\PokeDex_Estudo.csproj.CopyComplete
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\obj\Debug\PokeDex_Estudo.exe
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\obj\Debug\PokeDex_Estudo.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\PokeDex_Estudo.Context.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeDex_Estudo\bin\Debug\PokeDex_Estudo.Context.dll.config
