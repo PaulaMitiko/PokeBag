@@ -25,4 +25,6 @@ Critérios:\
 -Pokémons com IV entre 40 e 90%  serão mantidos caso tenham CP máximo. 
 
 Ideias para melhorias:\
--Seleção de counters para batalhas.
+-Seleção de counters para batalhas;\
+-Ajustar pokémons forma Alola e Galar (atualmente, pokemons Alola estão na casa de 1000, e pokemons Galar estão na casa de 2000 com seus respectivos números originais. Por ex: #019 Rattata, #1019 Rattata Alola);\
+-Acrescentar AttackDex.
