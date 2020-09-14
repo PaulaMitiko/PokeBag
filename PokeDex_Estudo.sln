@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeDex_Estudo", "PokeDex_E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeDex_Estudo.Context", "PokeDex_Estudo.Context\PokeDex_Estudo.Context.csproj", "{0D190175-487F-489C-93F2-490C80608BB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokeBag_API", "PokeBag_API\PokeBag_API.csproj", "{E5BCEE98-C167-4726-B944-022FD513E7CB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{0D190175-487F-489C-93F2-490C80608BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D190175-487F-489C-93F2-490C80608BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D190175-487F-489C-93F2-490C80608BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BCEE98-C167-4726-B944-022FD513E7CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BCEE98-C167-4726-B944-022FD513E7CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BCEE98-C167-4726-B944-022FD513E7CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BCEE98-C167-4726-B944-022FD513E7CB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

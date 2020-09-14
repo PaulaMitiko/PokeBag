@@ -10,13 +10,13 @@ namespace PokeDex_Estudo.Context.Models
         public int IdPokemonType { get; set; }
         public int CombatPoints { get; set; }
         public int HealthPoints { get; set; }
-        public int Atack { get; set; }
+        public int Attack { get; set; }
         public int Defense { get; set; }
         public int Stamina { get; set; }
         public double IndividualValue 
         { 
             get => _individualValue; 
-            set => _individualValue = (Atack + Defense + Stamina)/45d; 
+            set => _individualValue = (Attack + Defense + Stamina)/45d; 
         }
         public int IdCidade { get; set; }
         public DateTime DataCaptura { get; set; }
@@ -24,6 +24,8 @@ namespace PokeDex_Estudo.Context.Models
         public string Evento { get; set; }
         public string Sombroso { get; set; }
         public bool DisponivelTroca { get; set; }
+        public string FastAttack { get; set; } //futuramente inserir uma attack dex e fazer relação e tornar uma foreign key
+        public string ChargeAttack { get; set; }
 
 
         public virtual PokeDex PokeDex { get; set; }

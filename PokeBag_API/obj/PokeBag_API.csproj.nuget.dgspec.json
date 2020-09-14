@@ -1,0 +1,109 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeBag_API\\PokeBag_API.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeBag_API\\PokeBag_API.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeBag_API\\PokeBag_API.csproj",
+        "projectName": "PokeBag_API",
+        "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeBag_API\\PokeBag_API.csproj",
+        "packagesPath": "C:\\Users\\paula.heller\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeBag_API\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula.heller\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj": {
+                "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj"
+              },
+              "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo\\PokeDex_Estudo.csproj": {
+                "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo\\PokeDex_Estudo.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj",
+        "projectName": "PokeDex_Estudo.Context",
+        "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo\\PokeDex_Estudo.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo\\PokeDex_Estudo.csproj",
+        "projectName": "PokeDex_Estudo",
+        "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo\\PokeDex_Estudo.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj": {
+                "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokeDex_Estudo.Context\\PokeDex_Estudo.Context.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}
