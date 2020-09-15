@@ -1,0 +1,10 @@
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\bin\Debug\PokeBagForm.exe.config
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\bin\Debug\PokeBagForm.exe
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\bin\Debug\PokeBagForm.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.csprojAssemblyReference.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.FormCapturar.resources
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.Properties.Resources.resources
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.csproj.GenerateResource.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.csproj.CoreCompileInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.exe
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokeBagForm\obj\Debug\PokeBagForm.pdb
