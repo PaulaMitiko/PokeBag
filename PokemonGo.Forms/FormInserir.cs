@@ -1,6 +1,8 @@
 ﻿using Newtonsoft.Json;
 using PokeBag.Context.Models;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
@@ -12,6 +14,18 @@ namespace PokemonGo.Forms
         public FormInserir()
         {
             InitializeComponent();
+
+            carregalista();
+        }
+
+        public List<string> teste = new List<string> 
+        {"Joschua","Aly","Sone"};
+        private void carregalista()
+        {
+            foreach (var i in teste)
+            {
+                box_Cidade.Items.Add(i);
+            }
         }
 
         private void btn_Salvar_Click(object sender, EventArgs e)
@@ -44,7 +58,7 @@ namespace PokemonGo.Forms
             var URL = "http://localhost:5000/Pokebag/pokemonCapturado";
             var resultRequestPost = httpClient.PostAsync($"{URL}", content);
             resultRequestPost.Wait();
-
+            //Mensagem de certo ou erro usar show.dialog
             this.Close();
         }   
     }

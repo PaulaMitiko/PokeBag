@@ -52,12 +52,12 @@
             this.txt_Stamina = new System.Windows.Forms.TextBox();
             this.txt_Evento = new System.Windows.Forms.TextBox();
             this.txt_Sombroso = new System.Windows.Forms.TextBox();
-            this.box_NoPokemon = new System.Windows.Forms.ComboBox();
             this.box_Cidade = new System.Windows.Forms.ComboBox();
             this.dt_DataCaptura = new System.Windows.Forms.DateTimePicker();
             this.btn_ShinySim = new System.Windows.Forms.RadioButton();
             this.btn_ShinyNao = new System.Windows.Forms.RadioButton();
             this.pnl_Shiny = new System.Windows.Forms.Panel();
+            this.box_NoPokemon = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btn_Salvar
@@ -260,14 +260,6 @@
             this.txt_Sombroso.Size = new System.Drawing.Size(150, 31);
             this.txt_Sombroso.TabIndex = 3;
             // 
-            // box_NoPokemon
-            // 
-            this.box_NoPokemon.FormattingEnabled = true;
-            this.box_NoPokemon.Location = new System.Drawing.Point(150, 83);
-            this.box_NoPokemon.Name = "box_NoPokemon";
-            this.box_NoPokemon.Size = new System.Drawing.Size(300, 33);
-            this.box_NoPokemon.TabIndex = 4;
-            // 
             // box_Cidade
             // 
             this.box_Cidade.FormattingEnabled = true;
@@ -315,6 +307,14 @@
             this.pnl_Shiny.Name = "pnl_Shiny";
             this.pnl_Shiny.Size = new System.Drawing.Size(206, 32);
             this.pnl_Shiny.TabIndex = 7;
+            // 
+            // box_NoPokemon
+            // 
+            this.box_NoPokemon.FormattingEnabled = true;
+            this.box_NoPokemon.Location = new System.Drawing.Point(150, 83);
+            this.box_NoPokemon.Name = "box_NoPokemon";
+            this.box_NoPokemon.Size = new System.Drawing.Size(300, 33);
+            this.box_NoPokemon.TabIndex = 4;
             // 
             // FormInserir
             // 
@@ -384,12 +384,12 @@
         private System.Windows.Forms.TextBox txt_Stamina;
         private System.Windows.Forms.TextBox txt_Evento;
         private System.Windows.Forms.TextBox txt_Sombroso;
-        private System.Windows.Forms.ComboBox box_NoPokemon;
         private System.Windows.Forms.ComboBox box_Cidade;
         private System.Windows.Forms.DateTimePicker dt_DataCaptura;
         private System.Windows.Forms.RadioButton btn_ShinySim;
         private System.Windows.Forms.RadioButton btn_ShinyNao;
         private System.Windows.Forms.Panel pnl_Shiny;
+        private System.Windows.Forms.ComboBox box_NoPokemon;
     }
 }
 
