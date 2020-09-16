@@ -51,6 +51,3 @@ INSERT INTO Cidade VALUES
 ('Curitiba','Brasil'),
 ('Winter Garden', 'Estados Unidos');
 
-
-
-

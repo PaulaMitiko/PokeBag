@@ -12,17 +12,16 @@ namespace PokeBag_API.Controllers
     [Route("Pokebag")]
     public class PokebagController : ControllerBase
     {
-        //public static List<PokemonBag> meusPokemons = new List<PokemonBag>();
         public PokemonGoContext meusPokemons = new PokemonGoContext(); //tirar isso depois
 
         [HttpPost]
         [Route("pokemonCapturado")] //Inserir um pokémon recém capturado
         public ActionResult InserirPokemonCapturado(PokemonBag pokemon)
         {
-            /*meusPokemons.Add(pokemon);
-            meusPokemons.SaveChanges();*/
-            Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
-            variaveldoJosh.Add(pokemon);
+            meusPokemons.Add(pokemon);
+            meusPokemons.SaveChanges();
+            //Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
+            //variaveldoJosh.Add(pokemon);
 
             return Ok(meusPokemons);
         }
@@ -109,11 +108,6 @@ namespace PokeBag_API.Controllers
             try
             {
                 var pokemonTransferido = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
-
-                //var result = meusPokemons.RemoveAll(x => x.Id == idPokemon);
-
-                //if (result == 0)
-                    //return BadRequest(Message.NoSuccessTransferir);
                 
                 if (pokemonTransferido != null)
                 {
@@ -136,21 +130,9 @@ namespace PokeBag_API.Controllers
         public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP, int novoHP)
         {
             var pokemon = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
-            //var result = new Result<List<PokemonBag>>();
-
+            
             try
             {
-                /*result.Data = meusPokemons.PokemonBag.Where(x => x.Id == idPokemon).ToList();
-
-                result.Data.Select(s =>
-                {
-                    s.CombatPoints = novoCP;
-                    s.HealthPoints = novoHP;
-                    return s;
-                }).ToList();
-
-                return Ok(result);
-                */
                 if (!(pokemon is null))
                 {
                     pokemon.CombatPoints = novoCP;

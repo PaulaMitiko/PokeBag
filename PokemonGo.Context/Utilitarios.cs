@@ -1,5 +1,7 @@
-﻿using System;
+﻿using PokeBag.Context.Models;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace PokemonGo.Context
@@ -7,31 +9,59 @@ namespace PokemonGo.Context
     public class Utilitarios<T>
     {
         private PokemonGoContext meusPokemons;
-        public void Add(T objeto) 
+        public void AddPokeBag(PokemonBag pokemon) 
         {
             meusPokemons = new PokemonGoContext();
             using (meusPokemons) 
             {
-                meusPokemons.Add(objeto);
+                meusPokemons.PokemonBag.Add(pokemon);
                 meusPokemons.SaveChanges();
             }
         }
-        public void PrintAll(T objeto)
+        public void AddPokeDex(PokeDex newType)
         {
             meusPokemons = new PokemonGoContext();
             using (meusPokemons)
             {
-                //meusPokemons.PokemonBag.ToList();
+                meusPokemons.PokeDex.Add(newType);
+                meusPokemons.SaveChanges();
             }
         }
-        //public void Add(T objeto)
-        //{
-       //     meusPokemons = new PokemonGoContext();
-        //    using (meusPokemons)
-       //     {
-      //          meusPokemons.Add(objeto);
-      //          meusPokemons.SaveChanges();
-       //     }
-      //  }
+        public void AddCidade(Cidade newCidade)
+        {
+            meusPokemons = new PokemonGoContext();
+            using (meusPokemons)
+            {
+                meusPokemons.Cidade.Add(newCidade);
+                meusPokemons.SaveChanges();
+            }
+        }
+        public List<PokemonBag> PrintAllPokeBag()
+        {
+            meusPokemons = new PokemonGoContext();
+            
+            using (meusPokemons)
+            {
+                return meusPokemons.PokemonBag.ToList();
+            }
+        }
+        public List<PokeDex> PrintAllPokeDex()
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.PokeDex.ToList();
+            }
+        }
+        public List<Cidade> PrintAllCidade()
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.Cidade.ToList();
+            }
+        }
     }
 }

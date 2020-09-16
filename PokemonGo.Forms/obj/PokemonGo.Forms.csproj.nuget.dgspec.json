@@ -1,0 +1,137 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Forms\\PokemonGo.Forms.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Context\\PokemonGo.Context.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Context\\PokemonGo.Context.csproj",
+        "projectName": "PokemonGo.Context",
+        "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Context\\PokemonGo.Context.csproj",
+        "packagesPath": "C:\\Users\\paula.heller\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Context\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula.heller\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Forms\\PokemonGo.Forms.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Forms\\PokemonGo.Forms.csproj",
+        "projectName": "PokemonGo.Forms",
+        "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Forms\\PokemonGo.Forms.csproj",
+        "packagesPath": "C:\\Users\\paula.heller\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Forms\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\paula.heller\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Context\\PokemonGo.Context.csproj": {
+                "projectPath": "C:\\Users\\paula.heller\\Documents\\GitHub\\PokeBag\\PokemonGo.Context\\PokemonGo.Context.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WindowsForms": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

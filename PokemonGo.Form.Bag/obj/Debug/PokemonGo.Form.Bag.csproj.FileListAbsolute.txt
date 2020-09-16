@@ -8,3 +8,9 @@ C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\Poke
 C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokemonGo.Form.Bag.csproj.CoreCompileInputs.cache
 C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokeBagForm.exe
 C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokeBagForm.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\Newtonsoft.Json.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\PokemonGo.Context.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\Newtonsoft.Json.xml
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\PokemonGo.Context.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokemonGo.Form.Bag.csproj.CopyComplete
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\System.ComponentModel.Annotations.dll
