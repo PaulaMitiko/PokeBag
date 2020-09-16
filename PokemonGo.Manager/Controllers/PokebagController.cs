@@ -13,14 +13,16 @@ namespace PokeBag_API.Controllers
     public class PokebagController : ControllerBase
     {
         //public static List<PokemonBag> meusPokemons = new List<PokemonBag>();
-        public PokemonGoContext meusPokemons = new PokemonGoContext();
+        public PokemonGoContext meusPokemons = new PokemonGoContext(); //tirar isso depois
 
         [HttpPost]
         [Route("pokemonCapturado")] //Inserir um pokémon recém capturado
         public ActionResult InserirPokemonCapturado(PokemonBag pokemon)
         {
-            meusPokemons.Add(pokemon);
-            meusPokemons.SaveChanges();
+            /*meusPokemons.Add(pokemon);
+            meusPokemons.SaveChanges();*/
+            Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
+            variaveldoJosh.Add(pokemon);
 
             return Ok(meusPokemons);
         }

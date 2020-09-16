@@ -10,3 +10,15 @@ C:\Users\paula.heller\source\repos\PokemonGo.Manager\PokemonGo.Context\obj\Debug
 C:\Users\paula.heller\source\repos\PokemonGo.Manager\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.pdb
 C:\Users\paula.heller\source\repos\PokemonGo.Manager\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.genruntimeconfig.cache
 C:\Users\paula.heller\source\repos\PokemonGo.Manager\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.csproj.CoreCompileInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\bin\Debug\netcoreapp3.1\PokemonGo.Context.deps.json
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\bin\Debug\netcoreapp3.1\PokemonGo.Context.runtimeconfig.json
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\bin\Debug\netcoreapp3.1\PokemonGo.Context.runtimeconfig.dev.json
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\bin\Debug\netcoreapp3.1\PokemonGo.Context.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\bin\Debug\netcoreapp3.1\PokemonGo.Context.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.csprojAssemblyReference.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.AssemblyInfoInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.AssemblyInfo.cs
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.csproj.CoreCompileInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.dll
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Context\obj\Debug\netcoreapp3.1\PokemonGo.Context.genruntimeconfig.cache

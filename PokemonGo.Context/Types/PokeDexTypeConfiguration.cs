@@ -16,8 +16,6 @@ namespace PokeBag.Context.Types
             builder.Property(q => q.CandyForEvolution);
             builder.Property(q => q.BuddyCandyKm).IsRequired();
             builder.Property(q => q.CPMax).IsRequired();
-
-            builder.HasMany(q => q.Bag).WithOne().HasForeignKey(q => q.IdPokemonType);
         }
     }
 }

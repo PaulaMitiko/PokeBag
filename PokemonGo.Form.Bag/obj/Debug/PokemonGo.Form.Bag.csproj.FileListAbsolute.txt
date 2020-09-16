@@ -1,0 +1,10 @@
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\PokeBagForm.exe.config
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\PokeBagForm.exe
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\bin\Debug\PokeBagForm.pdb
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokemonGo.Form.Bag.csprojAssemblyReference.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokeBagForm.FormCapturar.resources
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokeBagForm.Properties.Resources.resources
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokemonGo.Form.Bag.csproj.GenerateResource.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokemonGo.Form.Bag.csproj.CoreCompileInputs.cache
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokeBagForm.exe
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Form.Bag\obj\Debug\PokeBagForm.pdb

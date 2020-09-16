@@ -18,6 +18,16 @@ namespace PokemonGo.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(PokemonGoContext).Assembly);
+
+            modelBuilder.Entity<PokemonBag>()
+            .HasOne(p => p.PokeDex)
+            .WithMany(b => b.Bag)
+            .HasForeignKey(p => p.IdPokemonType);
+
+            modelBuilder.Entity<PokemonBag>()
+            .HasOne(p => p.Cidade)
+            .WithMany(b => b.Bag)
+            .HasForeignKey(p => p.IdCidade);
         }
 
         public DbSet<PokemonBag> PokemonBag { get; set; }

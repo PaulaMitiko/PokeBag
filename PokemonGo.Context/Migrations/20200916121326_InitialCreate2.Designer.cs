@@ -10,8 +10,8 @@ using PokemonGo.Context;
 namespace PokemonGo.Context.Migrations
 {
     [DbContext(typeof(PokemonGoContext))]
-    [Migration("20200915205419_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20200916121326_InitialCreate2")]
+    partial class InitialCreate2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -91,9 +91,6 @@ namespace PokemonGo.Context.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasMaxLength(50);
 
-                    b.Property<int?>("CidadeId")
-                        .HasColumnType("int");
-
                     b.Property<int>("CombatPoints")
                         .HasColumnType("int");
 
@@ -126,9 +123,6 @@ namespace PokemonGo.Context.Migrations
                     b.Property<double>("IndividualValue")
                         .HasColumnType("float");
 
-                    b.Property<int?>("PokeDexId")
-                        .HasColumnType("int");
-
                     b.Property<bool>("Shiny")
                         .HasColumnType("bit");
 
@@ -139,40 +133,31 @@ namespace PokemonGo.Context.Migrations
                     b.Property<int>("Stamina")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<bool>("Transferir")
+                        .HasColumnType("bit");
 
-                    b.HasIndex("CidadeId");
+                    b.HasKey("Id");
 
                     b.HasIndex("IdCidade");
 
                     b.HasIndex("IdPokemonType");
-
-                    b.HasIndex("PokeDexId");
 
                     b.ToTable("PokemonBag");
                 });
 
             modelBuilder.Entity("PokeBag.Context.Models.PokemonBag", b =>
                 {
-                    b.HasOne("PokeBag.Context.Models.Cidade", null)
-                        .WithMany("Bag")
-                        .HasForeignKey("CidadeId");
-
                     b.HasOne("PokeBag.Context.Models.Cidade", "Cidade")
-                        .WithMany()
+                        .WithMany("Bag")
                         .HasForeignKey("IdCidade")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("PokeBag.Context.Models.PokeDex", null)
+                    b.HasOne("PokeBag.Context.Models.PokeDex", "PokeDex")
                         .WithMany("Bag")
                         .HasForeignKey("IdPokemonType")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.HasOne("PokeBag.Context.Models.PokeDex", "PokeDex")
-                        .WithMany()
-                        .HasForeignKey("PokeDexId");
                 });
 #pragma warning restore 612, 618
         }

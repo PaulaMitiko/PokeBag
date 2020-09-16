@@ -55,7 +55,7 @@
             this.dt_Data = new System.Windows.Forms.DateTimePicker();
             this.btn_ShinySim = new System.Windows.Forms.RadioButton();
             this.btn_ShinyNao = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Salvar = new System.Windows.Forms.Button();
             this.box_Cidade = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
@@ -189,6 +189,52 @@
             // box_NoPokemon
             // 
             this.box_NoPokemon.FormattingEnabled = true;
+            this.box_NoPokemon.Items.AddRange(new object[] {
+            "1           Bulbasaur",
+            "2           Ivysaur",
+            "3           Vanusaur",
+            "4           Charmander",
+            "5           Charmeleon",
+            "6           Charizard",
+            "7           Squirtle",
+            "8           Wartortle",
+            "9           Blastoise",
+            "10          Caterpie",
+            "11          Metapod",
+            "12          Butterfree",
+            "13          Weedle",
+            "14          Kakuna",
+            "15          Beedrill",
+            "16          Pidgey",
+            "17          Pidgeotto",
+            "18          Pidgeot",
+            "19          Rattata",
+            "20          Raticate",
+            "21          Spearow",
+            "22          Fearow",
+            "23          Ekans",
+            "24          Arbok",
+            "25          Pikachu",
+            "26          Raichu",
+            "27          Sandshrew",
+            "28          Sandslash",
+            "29          Nidoran(F)",
+            "30          Nidorina",
+            "31          Nidoqueen",
+            "32          Nidoran(M)",
+            "33          Nidorino",
+            "34          Nidoking",
+            "35          Clefairy",
+            "36          Clefable",
+            "37          Vulpix",
+            "38          Ninetales",
+            "39          Jigglypuff",
+            "40          Wigglytuff",
+            "41          Zubat",
+            "42          Golbat",
+            "43          Oddish",
+            "44          Gloom",
+            "45          Vileplume"});
             this.box_NoPokemon.Location = new System.Drawing.Point(150, 83);
             this.box_NoPokemon.Name = "box_NoPokemon";
             this.box_NoPokemon.Size = new System.Drawing.Size(238, 28);
@@ -286,14 +332,15 @@
             this.btn_ShinyNao.Text = "Não";
             this.btn_ShinyNao.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_Salvar
             // 
-            this.button1.Location = new System.Drawing.Point(279, 417);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(234, 43);
-            this.button1.TabIndex = 31;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Location = new System.Drawing.Point(279, 417);
+            this.btn_Salvar.Name = "btn_Salvar";
+            this.btn_Salvar.Size = new System.Drawing.Size(234, 43);
+            this.btn_Salvar.TabIndex = 31;
+            this.btn_Salvar.Text = "Salvar";
+            this.btn_Salvar.UseVisualStyleBackColor = true;
+            this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
             // 
             // box_Cidade
             // 
@@ -309,7 +356,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 474);
             this.Controls.Add(this.box_Cidade);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.btn_ShinyNao);
             this.Controls.Add(this.btn_ShinySim);
             this.Controls.Add(this.dt_Data);
@@ -373,7 +420,7 @@
         private System.Windows.Forms.DateTimePicker dt_Data;
         private System.Windows.Forms.RadioButton btn_ShinySim;
         private System.Windows.Forms.RadioButton btn_ShinyNao;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.ComboBox box_Cidade;
     }
 }

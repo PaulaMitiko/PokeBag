@@ -22,9 +22,6 @@ namespace PokeBag.Context.Types
             builder.Property(q => q.Sombroso).HasMaxLength(10);
             builder.Property(q => q.FastAttack).HasMaxLength(50);
             builder.Property(q => q.ChargeAttack).HasMaxLength(50);
-
-            builder.HasOne(q => q.PokeDex).WithMany().HasForeignKey(q => q.IdPokemonType);
-            builder.HasOne(q => q.Cidade).WithMany().HasForeignKey(q => q.IdCidade);
         }
     }
 }

@@ -12,8 +12,6 @@ namespace PokeBag.Context.Types
 
             builder.Property(q => q.NomeCidade).HasMaxLength(100);
             builder.Property(q => q.Pais).HasMaxLength(50);
-
-            builder.HasMany(q => q.Bag).WithOne().HasForeignKey(q => q.IdCidade);
         }
     }
 }
