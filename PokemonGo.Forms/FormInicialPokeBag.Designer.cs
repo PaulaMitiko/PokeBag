@@ -33,6 +33,8 @@
             this.btn_Excluir = new System.Windows.Forms.Button();
             this.btn_Alterar = new System.Windows.Forms.Button();
             this.btn_Exibir = new System.Windows.Forms.Button();
+            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_Sair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Título
@@ -63,6 +65,7 @@
             this.btn_Excluir.TabIndex = 1;
             this.btn_Excluir.Text = "Excluir um pokémon transferido";
             this.btn_Excluir.UseVisualStyleBackColor = true;
+            this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
             // btn_Alterar
             // 
@@ -72,6 +75,7 @@
             this.btn_Alterar.TabIndex = 1;
             this.btn_Alterar.Text = "Alterar os stats de um pokémon";
             this.btn_Alterar.UseVisualStyleBackColor = true;
+            this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
             // 
             // btn_Exibir
             // 
@@ -81,12 +85,35 @@
             this.btn_Exibir.TabIndex = 1;
             this.btn_Exibir.Text = "Consultar pokémons capturados";
             this.btn_Exibir.UseVisualStyleBackColor = true;
+            this.btn_Exibir.Click += new System.EventHandler(this.btn_Exibir_Click);
+            // 
+            // btn_Voltar
+            // 
+            this.btn_Voltar.Location = new System.Drawing.Point(250, 364);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(293, 56);
+            this.btn_Voltar.TabIndex = 1;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            // 
+            // btn_Sair
+            // 
+            this.btn_Sair.Location = new System.Drawing.Point(250, 429);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(293, 56);
+            this.btn_Sair.TabIndex = 1;
+            this.btn_Sair.Text = "Sair";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
             // FormInicialPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 382);
+            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.Controls.Add(this.btn_Sair);
+            this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Exibir);
             this.Controls.Add(this.btn_Alterar);
             this.Controls.Add(this.btn_Excluir);
@@ -106,5 +133,7 @@
         private System.Windows.Forms.Button btn_Excluir;
         private System.Windows.Forms.Button btn_Alterar;
         private System.Windows.Forms.Button btn_Exibir;
+        private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.Button btn_Sair;
     }
 }

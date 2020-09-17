@@ -46,7 +46,8 @@ namespace PokemonGo.Forms
         {
             var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokebag/pokemonsDaBag";
-            int especie = Convert.ToInt32(txt_Especie.Text);
+            var converteu = int.TryParse(txt_Especie.Text, out int especie);
+            if (!converteu) { especie = 0; }
             var resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={especie}");
             resultRequest.Wait();
 
@@ -62,6 +63,18 @@ namespace PokemonGo.Forms
             }
 
             this.dataGridView1.DataSource = lista;
+
+            txt_Especie.Text = "";
+        }
+
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

@@ -66,6 +66,10 @@ namespace PokemonGo.Forms
             //var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
             MessageBox.Show("Pokémon inserido com sucesso!");
 
+            btn_ShinyNao.Checked = false;
+            btn_ShinySim.Checked = false;
+            box_Cidade.Text = "";
+            box_NoPokemon.Text = "";
             txt_CP.Text = "";
             txt_HP.Text = "";
             txt_Attack.Text = "";

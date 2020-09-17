@@ -31,7 +31,19 @@ namespace PokemonGo.Forms
             //MessageBox.Show(resultBody.Message);
             MessageBox.Show("Stats alterado com sucesso");
 
+            txt_NoPokemon.Text = "";
+            txt_CP.Text = "";
+            txt_HP.Text = "";
+        }
+
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
             this.Close();
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

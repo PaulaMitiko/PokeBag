@@ -36,6 +36,8 @@
             this.txt_CP = new System.Windows.Forms.TextBox();
             this.txt_HP = new System.Windows.Forms.TextBox();
             this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_Sair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Título
@@ -98,7 +100,7 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(275, 334);
+            this.btn_Save.Location = new System.Drawing.Point(279, 257);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(179, 34);
             this.btn_Save.TabIndex = 4;
@@ -106,11 +108,33 @@
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
+            // btn_Voltar
+            // 
+            this.btn_Voltar.Location = new System.Drawing.Point(609, 358);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(179, 34);
+            this.btn_Voltar.TabIndex = 4;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            // 
+            // btn_Sair
+            // 
+            this.btn_Sair.Location = new System.Drawing.Point(609, 404);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(179, 34);
+            this.btn_Sair.TabIndex = 4;
+            this.btn_Sair.Text = "Sair";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
             // FormAlterarPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Sair);
+            this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Save);
             this.Controls.Add(this.txt_HP);
             this.Controls.Add(this.txt_CP);
@@ -136,5 +160,7 @@
         private System.Windows.Forms.TextBox txt_CP;
         private System.Windows.Forms.TextBox txt_HP;
         private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.Button btn_Sair;
     }
 }
