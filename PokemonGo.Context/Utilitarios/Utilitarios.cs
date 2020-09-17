@@ -50,6 +50,25 @@ namespace PokemonGo.Context.Utilitarios
             }
         }
 
+        public List<PokeDex> PrintPokeDex(int especiePokemon) 
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.PokeDex.Where(x => x.Id.Equals(especiePokemon)).ToList();
+            }
+        }
+
+        public List<PokeDex> PrintPokeDexType(string tipoPokemon)
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.PokeDex.Where(x => x.Type1.Equals(tipoPokemon)||x.Type2.Equals(tipoPokemon)).ToList();
+            }
+        }
         //#############//
         //PRINTAR TODOS//
         //#############//
@@ -118,6 +137,25 @@ namespace PokemonGo.Context.Utilitarios
                 {
                     pokemon.CombatPoints = novoCP;
                     pokemon.HealthPoints = novoHP;
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessAlter;
+                }
+                else
+                    return Message.NoSuccessAlter;
+            }
+        }
+
+        public string AlterarPokeDex(int idPokemon, int novoCP)
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var pokemon = meusPokemons.PokeDex.FirstOrDefault(q => q.Id == idPokemon);
+
+                if (pokemon != null)
+                {
+                    pokemon.CPMax = novoCP;
                     meusPokemons.SaveChanges();
                     return Message.SuccessAlter;
                 }
