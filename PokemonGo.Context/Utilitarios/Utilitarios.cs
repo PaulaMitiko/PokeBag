@@ -10,7 +10,7 @@ namespace PokemonGo.Context.Utilitarios
         //########################//
         //ADICIONAR ITENS AO BANCO//
         //########################//
-        public void AddPokeBag(PokemonBag pokemon) //Testado Ok
+        public void AddPokeBag(PokemonBag pokemon)
         {
             meusPokemons = new PokemonGoContext();
             using (meusPokemons) 
@@ -69,6 +69,16 @@ namespace PokemonGo.Context.Utilitarios
                 return meusPokemons.PokeDex.Where(x => x.Type1.Equals(tipoPokemon)||x.Type2.Equals(tipoPokemon)).ToList();
             }
         }
+
+        public List<Cidade> PrintCidadePais(string pais)
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.Cidade.Where(x => x.Pais.Equals(pais)).ToList();
+            }
+        }
         //#############//
         //PRINTAR TODOS//
         //#############//
@@ -114,6 +124,24 @@ namespace PokemonGo.Context.Utilitarios
                 if (pokemonTransferido != null)
                 {
                     meusPokemons.PokemonBag.Remove(pokemonTransferido);
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessTransferir;
+                }
+                else
+                    return Message.NoSuccessTransferir;
+            }
+        }
+        public string ExcluirCidade(int idCidade) 
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var cidadeExcluida = meusPokemons.Cidade.FirstOrDefault(q => q.Id == idCidade);
+
+                if (cidadeExcluida != null)
+                {
+                    meusPokemons.Cidade.Remove(cidadeExcluida);
                     meusPokemons.SaveChanges();
                     return Message.SuccessTransferir;
                 }
