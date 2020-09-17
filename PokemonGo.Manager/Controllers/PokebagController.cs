@@ -1,10 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PokemonGo.Context.Models;
 using PokemonGo.Context.Utilitarios;
-using PokemonGo.Context;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace PokemonGo.Manager.Controllers
 {

@@ -1,8 +1,6 @@
 ﻿using PokemonGo.Context.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace PokemonGo.Context.Utilitarios
 {
@@ -108,7 +106,7 @@ namespace PokemonGo.Context.Utilitarios
         //#############//
         //ALTERAR STATS//
         //#############//
-        public string AlterarPokeBag(int idPokemon, int novoCP, int novoHP) //Testando
+        public string AlterarPokeBag(int idPokemon, int novoCP, int novoHP) //Funcionando
         {
             meusPokemons = new PokemonGoContext();
 

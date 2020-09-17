@@ -1,8 +1,6 @@
 ﻿using Newtonsoft.Json;
 using PokemonGo.Context.Models;
-using PokemonGo.Context.Utilitarios;
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
@@ -15,9 +13,9 @@ namespace PokemonGo.Forms
         {
             InitializeComponent();
 
-            carregalista();
+            //carregalista();
         }
-
+        /*
         public List<string> teste = new List<string> 
         {"Joschua","Aly","Sone"};
         private void carregalista()
@@ -26,7 +24,7 @@ namespace PokemonGo.Forms
             {
                 box_Cidade.Items.Add(i);
             }
-        }
+        }*/
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
@@ -68,8 +66,26 @@ namespace PokemonGo.Forms
             //var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
             MessageBox.Show("Pokémon inserido com sucesso!");
 
+            txt_CP.Text = "";
+            txt_HP.Text = "";
+            txt_Attack.Text = "";
+            txt_Defense.Text = "";
+            txt_Stamina.Text = "";
+            txt_Evento.Text = "";
+            txt_Sombroso.Text = "";
+            txt_Fast.Text = "";
+            txt_Charge.Text = "";
+        }
+
+        private void btn_Voltar_Click(object sender, EventArgs e) 
+        {
             this.Close();
-        }   
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e) 
+        {
+            Environment.Exit(0);
+        }
     }
 }
 

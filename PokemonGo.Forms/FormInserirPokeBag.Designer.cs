@@ -58,13 +58,15 @@
             this.btn_ShinyNao = new System.Windows.Forms.RadioButton();
             this.pnl_Shiny = new System.Windows.Forms.Panel();
             this.box_NoPokemon = new System.Windows.Forms.ComboBox();
+            this.btn_Voltar = new System.Windows.Forms.Button();
+            this.btn_Sair = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(318, 404);
+            this.btn_Salvar.Location = new System.Drawing.Point(630, 279);
             this.btn_Salvar.Name = "btn_Salvar";
-            this.btn_Salvar.Size = new System.Drawing.Size(112, 34);
+            this.btn_Salvar.Size = new System.Drawing.Size(112, 78);
             this.btn_Salvar.TabIndex = 0;
             this.btn_Salvar.Text = "Salvar";
             this.btn_Salvar.UseVisualStyleBackColor = true;
@@ -367,11 +369,33 @@
             this.box_NoPokemon.Size = new System.Drawing.Size(300, 33);
             this.box_NoPokemon.TabIndex = 4;
             // 
-            // FormInserir
+            // btn_Voltar
+            // 
+            this.btn_Voltar.Location = new System.Drawing.Point(630, 363);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
+            this.btn_Voltar.TabIndex = 0;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            // 
+            // btn_Sair
+            // 
+            this.btn_Sair.Location = new System.Drawing.Point(630, 408);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(112, 34);
+            this.btn_Sair.TabIndex = 0;
+            this.btn_Sair.Text = "Sair";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
+            // FormInserirPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Sair);
+            this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_ShinyNao);
             this.Controls.Add(this.btn_ShinySim);
             this.Controls.Add(this.dt_DataCaptura);
@@ -402,7 +426,7 @@
             this.Controls.Add(this.lbl_Título);
             this.Controls.Add(this.btn_Salvar);
             this.Controls.Add(this.pnl_Shiny);
-            this.Name = "FormInserir";
+            this.Name = "FormInserirPokeBag";
             this.Text = "Inserir";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -441,6 +465,8 @@
         private System.Windows.Forms.RadioButton btn_ShinyNao;
         private System.Windows.Forms.Panel pnl_Shiny;
         private System.Windows.Forms.ComboBox box_NoPokemon;
+        private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.Button btn_Sair;
     }
 }
 

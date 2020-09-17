@@ -17,8 +17,9 @@ namespace PokemonGo.Forms
 
         private void bnt_Inserir_Click(object sender, EventArgs e)
         {
+            var inserir = new FormInserirPokeBag();
             this.Hide();
-            Application.Run(new FormInicialPokeBag());
+            inserir.ShowDialog();
             this.Show();
         }
     }

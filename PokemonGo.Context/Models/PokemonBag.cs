@@ -1,5 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PokemonGo.Context.Models
 {
@@ -20,7 +19,6 @@ namespace PokemonGo.Context.Models
             get => _individualValue;
             set => _individualValue = (Attack + Defense + Stamina) / 45d;
         }
-        
         public int IdCidade { get; set; }
         public DateTime DataCaptura { get; set; }
         public bool Shiny { get; set; }
@@ -30,7 +28,6 @@ namespace PokemonGo.Context.Models
         public string FastAttack { get; set; } //futuramente inserir uma attack dex e fazer relação e tornar uma foreign key
         public string ChargeAttack { get; set; }
         public bool Transferir { get; set; }
-
 
         public virtual PokeDex PokeDex { get; set; }
         public virtual Cidade Cidade { get; set; }
