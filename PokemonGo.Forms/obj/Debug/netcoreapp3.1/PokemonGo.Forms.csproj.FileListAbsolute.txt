@@ -53,3 +53,4 @@ C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Forms\obj\Debug\netcore
 C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Forms\obj\Debug\netcoreapp3.1\PokemonGo.Forms.pdb
 C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Forms\obj\Debug\netcoreapp3.1\PokemonGo.Forms.genruntimeconfig.cache
 C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Forms\obj\Debug\netcoreapp3.1\PokemonGo.Forms.FormExibir.resources
+C:\Users\paula.heller\Documents\GitHub\PokeBag\PokemonGo.Forms\obj\Debug\netcoreapp3.1\PokemonGo.Forms.FormAlterar.resources
