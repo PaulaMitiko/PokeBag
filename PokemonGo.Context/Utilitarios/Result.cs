@@ -1,6 +1,6 @@
 using System.Net;
 
-namespace PokeBagAPI
+namespace PokemonGo.Context.Utilitarios
 {
     public class Result<T>
     {

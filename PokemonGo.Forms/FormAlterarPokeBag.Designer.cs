@@ -1,6 +1,6 @@
 ﻿namespace PokemonGo.Forms
 {
-    partial class FormAlterar
+    partial class FormAlterarPokeBag
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbl_Título = new System.Windows.Forms.Label();
             this.lbl_NoPokemon = new System.Windows.Forms.Label();
             this.lbl_NewCP = new System.Windows.Forms.Label();
             this.lbl_NewHP = new System.Windows.Forms.Label();
@@ -38,15 +38,15 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbl_Título
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(222, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(333, 38);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Exibir Pokémons da Bag";
+            this.lbl_Título.AutoSize = true;
+            this.lbl_Título.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Título.Location = new System.Drawing.Point(222, 9);
+            this.lbl_Título.Name = "lbl_Título";
+            this.lbl_Título.Size = new System.Drawing.Size(403, 38);
+            this.lbl_Título.TabIndex = 1;
+            this.lbl_Título.Text = "Alterar Stats de um Pokémon";
             // 
             // lbl_NoPokemon
             // 
@@ -106,7 +106,7 @@
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
-            // FormAlterar
+            // FormAlterarPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -118,8 +118,8 @@
             this.Controls.Add(this.lbl_NewHP);
             this.Controls.Add(this.lbl_NewCP);
             this.Controls.Add(this.lbl_NoPokemon);
-            this.Controls.Add(this.label1);
-            this.Name = "FormAlterar";
+            this.Controls.Add(this.lbl_Título);
+            this.Name = "FormAlterarPokeBag";
             this.Text = "FormAlterar";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbl_Título;
         private System.Windows.Forms.Label lbl_NoPokemon;
         private System.Windows.Forms.Label lbl_NewCP;
         private System.Windows.Forms.Label lbl_NewHP;

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace PokeBag.Context.Models
+namespace PokemonGo.Context.Models
 {
     public class Cidade
     {

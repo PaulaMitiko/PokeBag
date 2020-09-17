@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using PokeBag.Context.Models;
+using PokemonGo.Context.Models;
 
 
-namespace PokeBag.Context.Types
+namespace PokemonGo.Context.Types
 {
     public class BagTypeConfiguration : IEntityTypeConfiguration<PokemonBag>
     {

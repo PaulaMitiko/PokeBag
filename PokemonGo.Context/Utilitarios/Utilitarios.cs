@@ -1,10 +1,10 @@
-﻿using PokeBag.Context.Models;
+﻿using PokemonGo.Context.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace PokemonGo.Context
+namespace PokemonGo.Context.Utilitarios
 {
     public class Utilitarios<T>
     {

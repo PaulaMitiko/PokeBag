@@ -1,6 +1,6 @@
 ﻿namespace PokemonGo.Forms
 {
-    partial class FormExibir
+    partial class FormExibirPokeBag
     {
         /// <summary>
         /// Required designer variable.

@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace PokemonGo.Forms
 {
-    public partial class FormInserir : Form
+    public partial class FormInserirPokeBag : Form
     {
-        public FormInserir()
+        public FormInserirPokeBag()
         {
             InitializeComponent();
 

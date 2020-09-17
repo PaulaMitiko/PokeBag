@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using PokeBag.Context.Models;
+using PokemonGo.Context.Models;
 
 namespace PokemonGo.Context
 {

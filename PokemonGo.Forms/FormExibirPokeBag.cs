@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace PokemonGo.Forms
 {
-    public partial class FormExibir : Form
+    public partial class FormExibirPokeBag : Form
     {
-        public FormExibir()
+        public FormExibirPokeBag()
         {
             InitializeComponent();
 

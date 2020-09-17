@@ -1,12 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using PokeBag.Context.Models;
-using PokeBagAPI;
+using PokemonGo.Context.Models;
+using PokemonGo.Context.Utilitarios;
 using PokemonGo.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PokeBag_API.Controllers
+namespace PokemonGo.Manager.Controllers
 {
     [ApiController]
     [Route("Pokebag")]
@@ -18,8 +18,9 @@ namespace PokeBag_API.Controllers
         [Route("pokemonCapturado")] //Inserir um pokémon recém capturado
         public ActionResult InserirPokemonCapturado(PokemonBag pokemon)
         {
-            meusPokemons.Add(pokemon);
-            meusPokemons.SaveChanges();
+            var result = new Result<List<PokemonBag>>();
+            Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
+            
             //Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
             //variaveldoJosh.Add(pokemon);
 

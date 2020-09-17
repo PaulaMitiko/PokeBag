@@ -6,9 +6,9 @@ using System.Windows.Forms;
 
 namespace PokemonGo.Forms
 {
-    public partial class FormAlterar : Form
+    public partial class FormAlterarPokeBag : Form
     {
-        public FormAlterar()
+        public FormAlterarPokeBag()
         {
             InitializeComponent();
         }

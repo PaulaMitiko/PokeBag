@@ -1,0 +1,110 @@
+﻿namespace PokemonGo.Forms
+{
+    partial class FormInicialPokeBag
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lbl_Título = new System.Windows.Forms.Label();
+            this.bnt_Inserir = new System.Windows.Forms.Button();
+            this.btn_Excluir = new System.Windows.Forms.Button();
+            this.btn_Alterar = new System.Windows.Forms.Button();
+            this.btn_Exibir = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+            // 
+            // lbl_Título
+            // 
+            this.lbl_Título.AutoSize = true;
+            this.lbl_Título.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Título.Location = new System.Drawing.Point(90, 38);
+            this.lbl_Título.Name = "lbl_Título";
+            this.lbl_Título.Size = new System.Drawing.Size(616, 38);
+            this.lbl_Título.TabIndex = 0;
+            this.lbl_Título.Text = "O que você gostaria de fazer na sua PokeBag?";
+            // 
+            // bnt_Inserir
+            // 
+            this.bnt_Inserir.Location = new System.Drawing.Point(250, 104);
+            this.bnt_Inserir.Name = "bnt_Inserir";
+            this.bnt_Inserir.Size = new System.Drawing.Size(293, 56);
+            this.bnt_Inserir.TabIndex = 1;
+            this.bnt_Inserir.Text = "Inserir um pokémon capturado";
+            this.bnt_Inserir.UseVisualStyleBackColor = true;
+            this.bnt_Inserir.Click += new System.EventHandler(this.bnt_Inserir_Click);
+            // 
+            // btn_Excluir
+            // 
+            this.btn_Excluir.Location = new System.Drawing.Point(250, 290);
+            this.btn_Excluir.Name = "btn_Excluir";
+            this.btn_Excluir.Size = new System.Drawing.Size(293, 56);
+            this.btn_Excluir.TabIndex = 1;
+            this.btn_Excluir.Text = "Excluir um pokémon transferido";
+            this.btn_Excluir.UseVisualStyleBackColor = true;
+            // 
+            // btn_Alterar
+            // 
+            this.btn_Alterar.Location = new System.Drawing.Point(250, 228);
+            this.btn_Alterar.Name = "btn_Alterar";
+            this.btn_Alterar.Size = new System.Drawing.Size(293, 56);
+            this.btn_Alterar.TabIndex = 1;
+            this.btn_Alterar.Text = "Alterar os stats de um pokémon";
+            this.btn_Alterar.UseVisualStyleBackColor = true;
+            // 
+            // btn_Exibir
+            // 
+            this.btn_Exibir.Location = new System.Drawing.Point(250, 166);
+            this.btn_Exibir.Name = "btn_Exibir";
+            this.btn_Exibir.Size = new System.Drawing.Size(293, 56);
+            this.btn_Exibir.TabIndex = 1;
+            this.btn_Exibir.Text = "Consultar pokémons capturados";
+            this.btn_Exibir.UseVisualStyleBackColor = true;
+            // 
+            // FormInicialPokeBag
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 382);
+            this.Controls.Add(this.btn_Exibir);
+            this.Controls.Add(this.btn_Alterar);
+            this.Controls.Add(this.btn_Excluir);
+            this.Controls.Add(this.bnt_Inserir);
+            this.Controls.Add(this.lbl_Título);
+            this.Name = "FormInicialPokeBag";
+            this.Text = "FormInicialPokeBag";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lbl_Título;
+        private System.Windows.Forms.Button bnt_Inserir;
+        private System.Windows.Forms.Button btn_Excluir;
+        private System.Windows.Forms.Button btn_Alterar;
+        private System.Windows.Forms.Button btn_Exibir;
+    }
+}

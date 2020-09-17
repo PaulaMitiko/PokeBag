@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PokeBag.Context.Models
+namespace PokemonGo.Context.Models
 {
     public class PokemonBag
     {

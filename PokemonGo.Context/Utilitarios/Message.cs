@@ -1,4 +1,4 @@
-﻿namespace PokeBagAPI
+﻿namespace PokemonGo.Context.Utilitarios
 {
     public class Message
     {
