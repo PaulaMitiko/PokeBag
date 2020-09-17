@@ -12,23 +12,32 @@ namespace PokemonGo.Manager.Controllers
     [Route("Pokebag")]
     public class PokebagController : ControllerBase
     {
-        public PokemonGoContext meusPokemons = new PokemonGoContext(); //tirar isso depois
-
         [HttpPost]
-        [Route("pokemonCapturado")] //Inserir um pokémon recém capturado
+        [Route("pokemonCapturado")] //Inserir um pokémon recém capturado - Funcionando
         public ActionResult InserirPokemonCapturado(PokemonBag pokemon)
         {
-            var result = new Result<List<PokemonBag>>();
-            Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
-            
-            //Utilitarios<PokemonBag> variaveldoJosh = new Utilitarios<PokemonBag>();
-            //variaveldoJosh.Add(pokemon);
+            var result = new Result<PokemonBag>();
+            try
+            {
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                auxiliar.AddPokeBag(pokemon);
+                result.Error = false;
+                result.Message = Message.SuccessAdd;
 
-            return Ok(meusPokemons);
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                result.Error = true;
+                result.Message = Message.NoSuccess + ex.Message;
+                result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                return NotFound(result);
+            }            
         }
 
         [HttpGet]
-        [Route("pokemonsDaBag")] //Listar todos os pokémons de uma espécie  
+        [Route("pokemonsDaBag")] //Listar todos os pokémons de uma espécie  - Funcionando
         public ActionResult MostrarPokemonsEspecie(int EspeciePokemon) //Vou ter que buscar na tabela PokeDex
                                                                        //o id da especie ao buscar o nome dela.
                                                                        //Mas não precisa disso agora.
@@ -36,7 +45,8 @@ namespace PokemonGo.Manager.Controllers
             var result = new Result<List<PokemonBag>>();
             try
             {
-                result.Data = meusPokemons.PokemonBag.Where(x => x.IdPokemonType.Equals(EspeciePokemon)).ToList();
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                result.Data = auxiliar.PrintPokeBag(EspeciePokemon);
 
                 if (result.Data.Count == 0)
                 {
@@ -66,13 +76,14 @@ namespace PokemonGo.Manager.Controllers
         }
 
         [HttpGet]
-        [Route("todosPokemonsDaBag")] //Listar todos os pokémons 
+        [Route("todosPokemonsDaBag")] //Listar todos os pokémons - Funcionando
         public ActionResult MostrarTodosPokemons()
         {
             var result = new Result<List<PokemonBag>>();
             try
             {
-                result.Data = meusPokemons.PokemonBag.ToList();
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                result.Data = auxiliar.PrintAllPokeBag();
 
                 if (result.Data.Count == 0)
                 {
@@ -102,22 +113,17 @@ namespace PokemonGo.Manager.Controllers
         }
 
         [HttpDelete]
-        [Route("pokemonTransferido")] //Excluir um pokémon que foi transferido
+        [Route("pokemonTransferido")] //Excluir um pokémon que foi transferido - Funcionando
         public ActionResult RemoverPokemonTransferido(int idPokemon) //Vou ter que achar uma forma de encontrar o id
                                                                      //do pokémon a ser transferido. Mas não agora.
         {
+            var result = new Result<List<PokemonBag>>();
             try
             {
-                var pokemonTransferido = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
-                
-                if (pokemonTransferido != null)
-                {
-                    meusPokemons.PokemonBag.Remove(pokemonTransferido);
-                    meusPokemons.SaveChanges();
-                    return BadRequest(Message.SuccessTransferir);
-                }
-                else
-                    return Ok(Message.NoSuccessTransferir);
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                result.Message = auxiliar.TransferirPokeBag(idPokemon);
+             
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -126,25 +132,18 @@ namespace PokemonGo.Manager.Controllers
         }
 
 
-        [HttpPut]
-        [Route("alterarStats")]
+        [HttpPut] 
+        [Route("alterarStats")] //Alterar os stats de um pokémon - Funcionando
         public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP, int novoHP)
         {
-            var pokemon = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
-            
+            var result = new Result<List<PokemonBag>>();
+
             try
             {
-                if (!(pokemon is null))
-                {
-                    pokemon.CombatPoints = novoCP;
-                    pokemon.HealthPoints = novoHP;
-                    meusPokemons.SaveChanges();
-                    return Ok(Message.SuccessAlter);
-                }
-                else
-                {
-                    return Ok(Message.NoSuccessAlter);
-                }
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                result.Message = auxiliar.AlterarPokeBag(idPokemon, novoCP, novoHP);
+                return Ok(result);
+                
             }
             catch (Exception ex)
             {

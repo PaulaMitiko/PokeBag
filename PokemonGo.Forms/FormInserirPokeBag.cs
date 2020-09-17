@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using PokeBag.Context.Models;
+using PokemonGo.Context.Models;
+using PokemonGo.Context.Utilitarios;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
@@ -30,15 +30,18 @@ namespace PokemonGo.Forms
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
+            int.TryParse(box_NoPokemon.Text, out int idPoke);
+            int.TryParse(box_Cidade.Text, out int idCidade);
+
             PokemonBag newPokemon = new PokemonBag()
             {
-                IdPokemonType = Int32.Parse(box_NoPokemon.Text),
+                IdPokemonType = (box_NoPokemon.SelectedIndex)+1,
                 CombatPoints = Int32.Parse(txt_CP.Text),
                 HealthPoints = Int32.Parse(txt_HP.Text),
                 Attack = Int32.Parse(txt_Attack.Text),
                 Defense = Int32.Parse(txt_Defense.Text),
                 Stamina = Int32.Parse(txt_Stamina.Text),
-                IdCidade = Int32.Parse(box_Cidade.Text),
+                IdCidade = (box_Cidade.SelectedIndex)+1,
                 DataCaptura = dt_DataCaptura.Value,
                 Evento = txt_Evento.Text,
                 Sombroso = txt_Sombroso.Text,
@@ -56,9 +59,15 @@ namespace PokemonGo.Forms
 
             var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokebag/pokemonCapturado";
-            var resultRequestPost = httpClient.PostAsync($"{URL}", content);
-            resultRequestPost.Wait();
-            //Mensagem de certo ou erro usar show.dialog
+            var resultRequest = httpClient.PostAsync($"{URL}", content);
+            resultRequest.Wait();
+
+            var result = resultRequest.Result.Content.ReadAsStringAsync();
+            result.Wait();
+
+            //var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
+            MessageBox.Show("Pokémon inserido com sucesso!");
+
             this.Close();
         }   
     }

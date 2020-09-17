@@ -9,7 +9,10 @@ namespace PokemonGo.Context.Utilitarios
     public class Utilitarios<T>
     {
         private PokemonGoContext meusPokemons;
-        public void AddPokeBag(PokemonBag pokemon) 
+        //########################//
+        //ADICIONAR ITENS AO BANCO//
+        //########################//
+        public void AddPokeBag(PokemonBag pokemon) //Testado Ok
         {
             meusPokemons = new PokemonGoContext();
             using (meusPokemons) 
@@ -36,10 +39,26 @@ namespace PokemonGo.Context.Utilitarios
                 meusPokemons.SaveChanges();
             }
         }
-        public List<PokemonBag> PrintAllPokeBag()
+        //##################//
+        //PRINTAR ESPECÍFICO//
+        //##################//
+        public List<PokemonBag> PrintPokeBag(int especiePokemon) //Testado - OK
         {
             meusPokemons = new PokemonGoContext();
             
+            using (meusPokemons)
+            {
+                return meusPokemons.PokemonBag.Where(x => x.IdPokemonType.Equals(especiePokemon)).ToList();
+            }
+        }
+
+        //#############//
+        //PRINTAR TODOS//
+        //#############//
+        public List<PokemonBag> PrintAllPokeBag() //Testado - Ok
+        {
+            meusPokemons = new PokemonGoContext();
+
             using (meusPokemons)
             {
                 return meusPokemons.PokemonBag.ToList();
@@ -61,6 +80,51 @@ namespace PokemonGo.Context.Utilitarios
             using (meusPokemons)
             {
                 return meusPokemons.Cidade.ToList();
+            }
+        }
+
+        //##################//
+        //EXCLUIR UM POKEMON//
+        //##################//
+        public string TransferirPokeBag(int idPokemon) //Funcionando
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var pokemonTransferido = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
+
+                if (pokemonTransferido != null)
+                {
+                    meusPokemons.PokemonBag.Remove(pokemonTransferido);
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessTransferir;
+                }
+                else
+                    return Message.NoSuccessTransferir;
+            }
+        }
+
+        //#############//
+        //ALTERAR STATS//
+        //#############//
+        public string AlterarPokeBag(int idPokemon, int novoCP, int novoHP) //Testando
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var pokemon = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
+
+                if (pokemon != null)
+                {
+                    pokemon.CombatPoints = novoCP;
+                    pokemon.HealthPoints = novoHP;
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessAlter;
+                }
+                else
+                    return Message.NoSuccessAlter;
             }
         }
     }

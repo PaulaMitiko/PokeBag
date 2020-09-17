@@ -1,13 +1,8 @@
 ﻿using Newtonsoft.Json;
-using PokeBag.Context.Models;
+using PokemonGo.Context.Models;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PokemonGo.Forms

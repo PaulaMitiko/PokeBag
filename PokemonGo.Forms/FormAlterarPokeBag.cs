@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Net;
 using System.Net.Http;
 using System.Windows.Forms;
 
@@ -29,7 +27,9 @@ namespace PokemonGo.Forms
             var result = resultRequest.Result.Content.ReadAsStringAsync();
             result.Wait();
 
-            MessageBox.Show(result.ToString());
+            //var resultBody = JsonConvert.DeserializeObject<Result<PokemonBag>>(result.Result);
+            //MessageBox.Show(resultBody.Message);
+            MessageBox.Show("Stats alterado com sucesso");
 
             this.Close();
         }
