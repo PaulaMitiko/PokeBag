@@ -31,7 +31,17 @@ namespace PokemonGo.Forms
 
             MessageBox.Show("Vish");
 
+            txt_IdPokemon.Text = "";
+        }
+
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
             this.Close();
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

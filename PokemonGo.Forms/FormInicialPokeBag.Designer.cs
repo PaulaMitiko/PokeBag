@@ -89,7 +89,7 @@
             // 
             // btn_Voltar
             // 
-            this.btn_Voltar.Location = new System.Drawing.Point(250, 364);
+            this.btn_Voltar.Location = new System.Drawing.Point(250, 374);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(293, 56);
             this.btn_Voltar.TabIndex = 1;
@@ -99,7 +99,7 @@
             // 
             // btn_Sair
             // 
-            this.btn_Sair.Location = new System.Drawing.Point(250, 429);
+            this.btn_Sair.Location = new System.Drawing.Point(250, 435);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(293, 56);
             this.btn_Sair.TabIndex = 1;
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 490);
+            this.ClientSize = new System.Drawing.Size(800, 509);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Exibir);

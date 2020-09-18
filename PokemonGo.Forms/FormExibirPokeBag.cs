@@ -12,8 +12,6 @@ namespace PokemonGo.Forms
         public FormExibirPokeBag()
         {
             InitializeComponent();
-
-            
         }
 
         private void btn_ExibirTodos_Click(object sender, EventArgs e)

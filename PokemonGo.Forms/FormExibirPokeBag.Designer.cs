@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lbl_Título = new System.Windows.Forms.Label();
             this.txt_Especie = new System.Windows.Forms.TextBox();
-            this.btn_ExibirTodos = new System.Windows.Forms.Button();
             this.btn_ExibirTipo = new System.Windows.Forms.Button();
+            this.lbl_Título = new System.Windows.Forms.Label();
+            this.btn_ExibirTodos = new System.Windows.Forms.Button();
             this.lbl_Tipo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Voltar = new System.Windows.Forms.Button();
@@ -51,32 +51,12 @@
             this.panel1.Size = new System.Drawing.Size(583, 50);
             this.panel1.TabIndex = 7;
             // 
-            // lbl_Título
-            // 
-            this.lbl_Título.AutoSize = true;
-            this.lbl_Título.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lbl_Título.Location = new System.Drawing.Point(229, 11);
-            this.lbl_Título.Name = "lbl_Título";
-            this.lbl_Título.Size = new System.Drawing.Size(333, 38);
-            this.lbl_Título.TabIndex = 1;
-            this.lbl_Título.Text = "Exibir Pokémons da Bag";
-            // 
             // txt_Especie
             // 
             this.txt_Especie.Location = new System.Drawing.Point(220, 13);
             this.txt_Especie.Name = "txt_Especie";
             this.txt_Especie.Size = new System.Drawing.Size(150, 31);
             this.txt_Especie.TabIndex = 3;
-            // 
-            // btn_ExibirTodos
-            // 
-            this.btn_ExibirTodos.Location = new System.Drawing.Point(410, 374);
-            this.btn_ExibirTodos.Name = "btn_ExibirTodos";
-            this.btn_ExibirTodos.Size = new System.Drawing.Size(176, 34);
-            this.btn_ExibirTodos.TabIndex = 0;
-            this.btn_ExibirTodos.Text = "Exibir Todos";
-            this.btn_ExibirTodos.UseVisualStyleBackColor = true;
-            this.btn_ExibirTodos.Click += new System.EventHandler(this.btn_ExibirTodos_Click);
             // 
             // btn_ExibirTipo
             // 
@@ -87,6 +67,26 @@
             this.btn_ExibirTipo.Text = "Exibir Um Tipo";
             this.btn_ExibirTipo.UseVisualStyleBackColor = true;
             this.btn_ExibirTipo.Click += new System.EventHandler(this.btn_ExibirTipo_Click);
+            // 
+            // lbl_Título
+            // 
+            this.lbl_Título.AutoSize = true;
+            this.lbl_Título.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lbl_Título.Location = new System.Drawing.Point(229, 11);
+            this.lbl_Título.Name = "lbl_Título";
+            this.lbl_Título.Size = new System.Drawing.Size(333, 38);
+            this.lbl_Título.TabIndex = 1;
+            this.lbl_Título.Text = "Exibir Pokémons da Bag";
+            // 
+            // btn_ExibirTodos
+            // 
+            this.btn_ExibirTodos.Location = new System.Drawing.Point(410, 374);
+            this.btn_ExibirTodos.Name = "btn_ExibirTodos";
+            this.btn_ExibirTodos.Size = new System.Drawing.Size(176, 34);
+            this.btn_ExibirTodos.TabIndex = 0;
+            this.btn_ExibirTodos.Text = "Exibir Todos";
+            this.btn_ExibirTodos.UseVisualStyleBackColor = true;
+            this.btn_ExibirTodos.Click += new System.EventHandler(this.btn_ExibirTodos_Click);
             // 
             // lbl_Tipo
             // 
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 464);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.dataGridView1);

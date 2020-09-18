@@ -32,6 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txt_IdPokemon = new System.Windows.Forms.TextBox();
             this.btn_Excluir = new System.Windows.Forms.Button();
+            this.btn_Sair = new System.Windows.Forms.Button();
+            this.btn_Voltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Título
@@ -62,7 +64,7 @@
             // 
             // btn_Excluir
             // 
-            this.btn_Excluir.Location = new System.Drawing.Point(320, 243);
+            this.btn_Excluir.Location = new System.Drawing.Point(320, 203);
             this.btn_Excluir.Name = "btn_Excluir";
             this.btn_Excluir.Size = new System.Drawing.Size(112, 34);
             this.btn_Excluir.TabIndex = 3;
@@ -70,11 +72,33 @@
             this.btn_Excluir.UseVisualStyleBackColor = true;
             this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
             // 
+            // btn_Sair
+            // 
+            this.btn_Sair.Location = new System.Drawing.Point(676, 277);
+            this.btn_Sair.Name = "btn_Sair";
+            this.btn_Sair.Size = new System.Drawing.Size(112, 34);
+            this.btn_Sair.TabIndex = 4;
+            this.btn_Sair.Text = "Sair";
+            this.btn_Sair.UseVisualStyleBackColor = true;
+            this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
+            // btn_Voltar
+            // 
+            this.btn_Voltar.Location = new System.Drawing.Point(558, 277);
+            this.btn_Voltar.Name = "btn_Voltar";
+            this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
+            this.btn_Voltar.TabIndex = 4;
+            this.btn_Voltar.Text = "Voltar";
+            this.btn_Voltar.UseVisualStyleBackColor = true;
+            this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
+            // 
             // FormExcluirPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 323);
+            this.Controls.Add(this.btn_Voltar);
+            this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Excluir);
             this.Controls.Add(this.txt_IdPokemon);
             this.Controls.Add(this.label1);
@@ -92,5 +116,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_IdPokemon;
         private System.Windows.Forms.Button btn_Excluir;
+        private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.Button btn_Voltar;
     }
 }
