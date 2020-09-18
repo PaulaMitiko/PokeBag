@@ -48,6 +48,8 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
             this.btn_Voltar = new System.Windows.Forms.Button();
+            this.txt_Lvl35 = new System.Windows.Forms.TextBox();
+            this.lbl_Lvl35 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Título
@@ -249,9 +251,9 @@
             // 
             // btn_Save
             // 
-            this.btn_Save.Location = new System.Drawing.Point(503, 388);
+            this.btn_Save.Location = new System.Drawing.Point(503, 409);
             this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(285, 50);
+            this.btn_Save.Size = new System.Drawing.Size(285, 34);
             this.btn_Save.TabIndex = 5;
             this.btn_Save.Text = "Salvar";
             this.btn_Save.UseVisualStyleBackColor = true;
@@ -259,7 +261,7 @@
             // 
             // btn_Sair
             // 
-            this.btn_Sair.Location = new System.Drawing.Point(157, 404);
+            this.btn_Sair.Location = new System.Drawing.Point(158, 409);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
             this.btn_Sair.TabIndex = 5;
@@ -269,7 +271,7 @@
             // 
             // btn_Voltar
             // 
-            this.btn_Voltar.Location = new System.Drawing.Point(25, 404);
+            this.btn_Voltar.Location = new System.Drawing.Point(25, 409);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
             this.btn_Voltar.TabIndex = 5;
@@ -277,11 +279,29 @@
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
+            // txt_Lvl35
+            // 
+            this.txt_Lvl35.Location = new System.Drawing.Point(503, 373);
+            this.txt_Lvl35.Name = "txt_Lvl35";
+            this.txt_Lvl35.Size = new System.Drawing.Size(285, 31);
+            this.txt_Lvl35.TabIndex = 3;
+            // 
+            // lbl_Lvl35
+            // 
+            this.lbl_Lvl35.AutoSize = true;
+            this.lbl_Lvl35.Location = new System.Drawing.Point(23, 373);
+            this.lbl_Lvl35.Name = "lbl_Lvl35";
+            this.lbl_Lvl35.Size = new System.Drawing.Size(336, 25);
+            this.lbl_Lvl35.TabIndex = 2;
+            this.lbl_Lvl35.Text = "Qual é o CP deste Pokémon no Level 35?";
+            // 
             // FormInserirPokeDex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_Lvl35);
+            this.Controls.Add(this.txt_Lvl35);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Save);
@@ -331,5 +351,7 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_Sair;
         private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.TextBox txt_Lvl35;
+        private System.Windows.Forms.Label lbl_Lvl35;
     }
 }

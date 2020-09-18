@@ -73,14 +73,14 @@ namespace PokemonGo.Manager.Controllers
 
 
         [HttpGet]
-        [Route("listarCidadesPais")] //Listar cidades de um país específico
-        public ActionResult MostrarCidadesPais(string pais)
+        [Route("listarCidadeEspecifica")] //Listar informações de uma cidade especifica
+        public ActionResult MostrarCidadesPais(int idCidade)
         {
             var result = new Result<List<Cidade>>();
             try
             {
                 Utilitarios<Cidade> auxiliar = new Utilitarios<Cidade>();
-                result.Data = auxiliar.PrintCidadePais(pais);
+                result.Data = auxiliar.PrintCidadeEspecifica(idCidade);
 
                 if (result.Data.Count == 0)
                 {
@@ -127,17 +127,16 @@ namespace PokemonGo.Manager.Controllers
             }
         }
 
-        /* Não existem dados a serem alterados em cidade
         [HttpPut] 
-        [Route("alterarDados")]
-        public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP)
+        [Route("atualizarContagem")] //Atualizar contagem
+        public ActionResult AlterarContagem(int idCidade, int novaContagem)
         {
-            var result = new Result<List<PokeDex>>();
+            var result = new Result<List<Cidade>>();
 
             try
             {
-                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
-                result.Message = auxiliar.AlterarPokeDex(idPokemon, novoCP);
+                Utilitarios<Cidade> auxiliar = new Utilitarios<Cidade>();
+                result.Message = auxiliar.AlterarCidade(idCidade, novaContagem);
                 return Ok(result);
                 
             }
@@ -146,6 +145,6 @@ namespace PokemonGo.Manager.Controllers
                 return BadRequest(ex.Message);
             }
 
-        }*/
+        }
     }
 }

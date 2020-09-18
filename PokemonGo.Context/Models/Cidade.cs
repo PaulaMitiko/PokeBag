@@ -7,6 +7,7 @@ namespace PokemonGo.Context.Models
         public int Id { get; set; }
         public string NomeCidade { get; set; }
         public string Pais { get; set; }
+        public int QtdePokemons { get; set; }
 
         public virtual ICollection<PokemonBag> Bag { get; set; } = new HashSet<PokemonBag>(); //Josh pediu pra por num ctor
     }

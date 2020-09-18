@@ -28,7 +28,8 @@ namespace PokemonGo.Forms
                 CandyForEvolution = evol,
                 BuddyCandyKm = int.Parse(box_Buddy.Text),
                 EggKm = egg,
-                CPMax = int.Parse(txt_CPMax.Text)
+                CPMax = int.Parse(txt_CPMax.Text),
+                CPLvl35 = int.Parse(txt_Lvl35.Text)
             };
             var newPokemonJson = JsonConvert.SerializeObject(newPokemon);
             StringContent content = new StringContent(newPokemonJson, Encoding.UTF8, "application/json");

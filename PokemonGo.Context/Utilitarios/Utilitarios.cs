@@ -70,13 +70,13 @@ namespace PokemonGo.Context.Utilitarios
             }
         }
 
-        public List<Cidade> PrintCidadePais(string pais)
+        public List<Cidade> PrintCidadeEspecifica(int idCidade)
         {
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
             {
-                return meusPokemons.Cidade.Where(x => x.Pais.Equals(pais)).ToList();
+                return meusPokemons.Cidade.Where(x => x.Id.Equals(idCidade)).ToList();
             }
         }
         //#############//
@@ -184,6 +184,44 @@ namespace PokemonGo.Context.Utilitarios
                 if (pokemon != null)
                 {
                     pokemon.CPMax = novoCP;
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessAlter;
+                }
+                else
+                    return Message.NoSuccessAlter;
+            }
+        }
+
+        public string AlterarContagemPokemon(int idPokemon, int novaContagem)
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var pokemon = meusPokemons.PokeDex.FirstOrDefault(q => q.Id == idPokemon);
+
+                if (pokemon != null)
+                {
+                    pokemon.QtdePokemon = novaContagem;
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessAlter;
+                }
+                else
+                    return Message.NoSuccessAlter;
+            }
+        }
+
+        public string AlterarCidade(int idCidade, int novaContagem)
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var cidade = meusPokemons.Cidade.FirstOrDefault(q => q.Id == idCidade);
+
+                if (cidade != null)
+                {
+                    cidade.QtdePokemons = novaContagem;
                     meusPokemons.SaveChanges();
                     return Message.SuccessAlter;
                 }

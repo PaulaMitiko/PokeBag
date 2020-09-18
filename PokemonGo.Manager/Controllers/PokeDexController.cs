@@ -183,5 +183,25 @@ namespace PokemonGo.Manager.Controllers
             }
 
         }
+
+        [HttpPut]
+        [Route("atualizarContagem")] //Atualizar contagem
+        public ActionResult AlterarContagem(int idPokemon, int novaContagem)
+        {
+            var result = new Result<List<PokeDex>>();
+
+            try
+            {
+                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
+                result.Message = auxiliar.AlterarContagemPokemon(idPokemon, novaContagem);
+                return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+
+        }
     }
 }
