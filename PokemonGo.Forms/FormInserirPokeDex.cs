@@ -17,6 +17,7 @@ namespace PokemonGo.Forms
         private void btn_Save_Click(object sender, EventArgs e)
         {
             int.TryParse(box_Egg.Text, out int egg);
+            int.TryParse(box_Evol.Text, out int evol);
 
             PokeDex newPokemon = new PokeDex()
             {
@@ -24,7 +25,7 @@ namespace PokemonGo.Forms
                 Name = txt_Name.Text,
                 Type1 = box_Tipo1.Text,
                 Type2 = box_Tipo2.Text,
-                CandyForEvolution = int.Parse(box_Evol.Text),
+                CandyForEvolution = evol,
                 BuddyCandyKm = int.Parse(box_Buddy.Text),
                 EggKm = egg,
                 CPMax = int.Parse(txt_CPMax.Text)

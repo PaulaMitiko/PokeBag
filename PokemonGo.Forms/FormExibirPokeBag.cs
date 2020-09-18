@@ -33,6 +33,8 @@ namespace PokemonGo.Forms
             }
 
             this.dataGridView1.DataSource = lista;
+            //this.dataGridView1.Columns["Bag"].Visible = false;
+            //this.dataGridView1.Columns["Bag"].Visible = false;
         }
 
         class Root
@@ -61,6 +63,8 @@ namespace PokemonGo.Forms
             }
 
             this.dataGridView1.DataSource = lista;
+            this.dataGridView1.Columns["Cidade"].Visible = false;
+            this.dataGridView1.Columns["PokeDex"].Visible = false;
 
             txt_Especie.Text = "";
         }

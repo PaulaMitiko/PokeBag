@@ -17,7 +17,7 @@ namespace PokemonGo.Forms
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormPrintInserirCidade());
+            Application.Run(new FormMain());
         }
     }
 }

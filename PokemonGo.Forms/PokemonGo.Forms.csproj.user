@@ -4,13 +4,22 @@
     <Compile Update="FormAlterarPokeBag.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormAlterarPokeDex.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormExcluirPokeBag.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormExibirPokeBag.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormExibirPokeDex.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormInicialPokeBag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormInicialPokeDex.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormInserirPokeBag.cs">

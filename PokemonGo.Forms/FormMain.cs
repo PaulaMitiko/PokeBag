@@ -25,7 +25,7 @@ namespace PokemonGo.Forms
 
         private void btn_PokeDex_Click(object sender, EventArgs e)
         {
-            var pokeDex = new FormInicialPokeBag();
+            var pokeDex = new FormInicialPokeDex();
             this.Hide();
             pokeDex.ShowDialog();
             this.Show();
