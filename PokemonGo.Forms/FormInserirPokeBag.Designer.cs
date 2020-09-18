@@ -265,11 +265,6 @@
             // box_Cidade
             // 
             this.box_Cidade.FormattingEnabled = true;
-            this.box_Cidade.Items.AddRange(new object[] {
-            "1           Maringá",
-            "2           Bombinhas",
-            "3           Curitiba",
-            "4           Winter Garden"});
             this.box_Cidade.Location = new System.Drawing.Point(150, 201);
             this.box_Cidade.Name = "box_Cidade";
             this.box_Cidade.Size = new System.Drawing.Size(300, 33);
@@ -318,52 +313,6 @@
             // box_NoPokemon
             // 
             this.box_NoPokemon.FormattingEnabled = true;
-            this.box_NoPokemon.Items.AddRange(new object[] {
-            "1           Bulbasaur",
-            "2           Ivysaur",
-            "3           Vanusaur",
-            "4           Charmander",
-            "5           Charmeleon",
-            "6           Charizard",
-            "7           Squirtle",
-            "8           Wartortle",
-            "9           Blastoise",
-            "10          Caterpie",
-            "11          Metapod",
-            "12          Butterfree",
-            "13          Weedle",
-            "14          Kakuna",
-            "15          Beedrill",
-            "16          Pidgey",
-            "17          Pidgeotto",
-            "18          Pidgeot",
-            "19          Rattata",
-            "20          Raticate",
-            "21          Spearow",
-            "22          Fearow",
-            "23          Ekans",
-            "24          Arbok",
-            "25          Pikachu",
-            "26          Raichu",
-            "27          Sandshrew",
-            "28          Sandslash",
-            "29          Nidoran(F)",
-            "30          Nidorina",
-            "31          Nidoqueen",
-            "32          Nidoran(M)",
-            "33          Nidorino",
-            "34          Nidoking",
-            "35          Clefairy",
-            "36          Clefable",
-            "37          Vulpix",
-            "38          Ninetales",
-            "39          Jigglypuff",
-            "40          Wigglytuff",
-            "41          Zubat",
-            "42          Golbat",
-            "43          Oddish",
-            "44          Gloom",
-            "45          Vileplume"});
             this.box_NoPokemon.Location = new System.Drawing.Point(150, 83);
             this.box_NoPokemon.Name = "box_NoPokemon";
             this.box_NoPokemon.Size = new System.Drawing.Size(300, 33);
