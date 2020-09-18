@@ -18,11 +18,11 @@ Critérios:\
 -Deve ser mantido pelo menos um pokemon de cada cidade registrada;\
 -Deve ser mantido pelo menos um pokemon de cada espécie registrada;\
 -Todos os pokemons shinys devem ser mantidos;\
--Pelo menos um exemplar sombroso e um exemplar purificado devem ser mantidos para cada espécie registrada;\
--Pelo menos um exemplar de cada evento deve ser mantido para cada espécie de pokémon;\
+-Pelo menos um exemplar sombroso e um exemplar purificado devem ser mantidos para cada espécie registrada (por enquanto todos os pokémons sombrosos serão armazenados);\
+-Pelo menos um exemplar de cada evento deve ser mantido para cada espécie de pokémon (por enquanto todos os pokémons de eventos serão armazenados);\
 -Pokémons com IV (Individual Value) inferior a 40% e CP (Combat Point) próximo ao máximo são mantidos para troca;\
 -Pokémons com IV acima de 90% são mantidos, independente do CP;\
--Pokémons com IV entre 40 e 90%  serão mantidos caso tenham CP máximo. 
+-Pokémons com IV entre 40 e 90%  serão mantidos caso tenham Level maior ou igual a 35. 
 
 Ideias para melhorias:\
 -Seleção de counters para batalhas;\
