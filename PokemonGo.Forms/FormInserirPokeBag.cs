@@ -28,9 +28,6 @@ namespace PokemonGo.Forms
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            int.TryParse(box_NoPokemon.Text, out int idPoke);
-            int.TryParse(box_Cidade.Text, out int idCidade);
-
             PokemonBag newPokemon = new PokemonBag()
             {
                 IdPokemonType = (box_NoPokemon.SelectedIndex)+1,

@@ -16,6 +16,9 @@
     <Compile Update="FormInserirPokeBag.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormInserirPokeDex.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
