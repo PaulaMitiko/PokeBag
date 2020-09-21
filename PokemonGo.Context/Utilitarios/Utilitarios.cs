@@ -40,6 +40,15 @@ namespace PokemonGo.Context.Utilitarios
         //##################//
         //PRINTAR ESPECÍFICO//
         //##################//
+        public List<PokemonBag> PrintPokeBag(int especiePokemon) //Testado - OK
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.PokemonBag.Where(x => x.IdPokemonType.Equals(especiePokemon)).ToList();
+            }
+        }
         public List<PokemonBagJoinDex> PrintPokeBag(string especiePokemon) //Testado - OK
         {
             meusPokemons = new PokemonGoContext();
@@ -148,6 +157,63 @@ namespace PokemonGo.Context.Utilitarios
                 return meusPokemons.PokemonBag.ToList();
             }
         }
+        public List<PokemonBagJoinDex> PrintAllPokeBagJoin() //Testado - Ok
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                List<PokemonBagJoinDex> BagJoinDex = new List<PokemonBagJoinDex>();
+                var Lists = (from PokeBag in meusPokemons.PokemonBag
+                             join Dex in meusPokemons.PokeDex on PokeBag.IdPokemonType equals Dex.Id
+                             join Cidade in meusPokemons.Cidade on PokeBag.IdCidade equals Cidade.Id
+                             select new
+                             {
+                                 PokeBag.Id,
+                                 Dex.Name,
+                                 PokeBag.CombatPoints,
+                                 PokeBag.HealthPoints,
+                                 PokeBag.Attack,
+                                 PokeBag.Defense,
+                                 PokeBag.Stamina,
+                                 Cidade.NomeCidade,
+                                 PokeBag.DataCaptura,
+                                 PokeBag.Shiny,
+                                 PokeBag.Evento,
+                                 PokeBag.Sombroso,
+                                 PokeBag.DisponivelTroca,
+                                 PokeBag.FastAttack,
+                                 PokeBag.ChargeAttack,
+                                 PokeBag.Transferir
+                             }).ToList();
+                foreach (var item in Lists)
+                {
+                    PokemonBagJoinDex aux = new PokemonBagJoinDex();
+
+                    aux.Id = item.Id;
+                    aux.PokemonType = item.Name;
+                    aux.CombatPoints = item.CombatPoints;
+                    aux.HealthPoints = item.HealthPoints;
+                    aux.Attack = item.Attack;
+                    aux.Defense = item.Defense;
+                    aux.Stamina = item.Stamina;
+                    aux.NomeCidade = item.NomeCidade;
+                    aux.DataCaptura = item.DataCaptura;
+                    aux.Shiny = item.Shiny;
+                    aux.Evento = item.Evento;
+                    aux.Sombroso = item.Sombroso;
+                    aux.DisponivelTroca = item.DisponivelTroca;
+                    aux.FastAttack = item.FastAttack;
+                    aux.ChargeAttack = item.ChargeAttack;
+                    aux.Transferir = item.Transferir;
+
+                    BagJoinDex.Add(aux);
+                
+                }
+                return BagJoinDex;
+            }
+        }
+        
         public List<PokeDex> PrintAllPokeDex()
         {
             meusPokemons = new PokemonGoContext();

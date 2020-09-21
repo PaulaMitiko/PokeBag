@@ -17,7 +17,7 @@ namespace PokemonGo.Forms
         private void btn_ExibirTodos_Click(object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
-            var URL = "http://localhost:5000/Pokebag/todosPokemonsDaBag";
+            var URL = "http://localhost:5000/Pokebag/todosPokemonsDaBagJoin";
             var resultRequest = httpClient.GetAsync(URL);
             resultRequest.Wait();
 
@@ -46,7 +46,7 @@ namespace PokemonGo.Forms
         private void btn_ExibirTipo_Click(object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
-            var URL = "http://localhost:5000/Pokebag/pokemonsDaBag";
+            var URL = "http://localhost:5000/Pokebag/pokemonsDaBagstring";
             var especie = txt_Especie.Text;
             var resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={especie}");
             resultRequest.Wait();

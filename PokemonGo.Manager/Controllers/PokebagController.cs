@@ -33,9 +33,9 @@ namespace PokemonGo.Manager.Controllers
                 return NotFound(result);
             }            
         }
-
+        
         [HttpGet]
-        [Route("pokemonsDaBag")] //Listar todos os pokémons de uma espécie  - Funcionando
+        [Route("pokemonsDaBagstring")] //Listar todos os pokémons de uma espécie  - Funcionando
         public ActionResult MostrarPokemonsEspecie(string EspeciePokemon) //Vou ter que buscar na tabela PokeDex
                                                                        //o id da especie ao buscar o nome dela.
                                                                        //Mas não precisa disso agora.
@@ -44,6 +44,45 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<PokemonBagJoinDex> auxiliar = new Utilitarios<PokemonBagJoinDex>();
+                result.Data = auxiliar.PrintPokeBag(EspeciePokemon);
+
+                if (result.Data.Count == 0)
+                {
+                    result.Error = true;
+                    result.Message = Message.NoPokemonType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return BadRequest(result);
+                }
+                else
+                {
+                    result.Error = false;
+                    result.Message = Message.SuccessType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Error = true;
+                result.Message = Message.NoSuccess + ex.Message;
+                result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                return NotFound(result);
+            }
+        }
+
+        [HttpGet]
+        [Route("pokemonsDaBag")] //Listar todos os pokémons de uma espécie  - Funcionando
+        public ActionResult MostrarPokemonsEspecie(int EspeciePokemon) //Vou ter que buscar na tabela PokeDex
+                                                                          //o id da especie ao buscar o nome dela.
+                                                                          //Mas não precisa disso agora.
+        {
+            var result = new Result<List<PokemonBag>>();
+            try
+            {
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
                 result.Data = auxiliar.PrintPokeBag(EspeciePokemon);
 
                 if (result.Data.Count == 0)
@@ -109,7 +148,44 @@ namespace PokemonGo.Manager.Controllers
                 return NotFound(result);
             }
         }
+        
+        [HttpGet]
+        [Route("todosPokemonsDaBagJoin")] //Listar todos os pokémons - Funcionando
+        public ActionResult MostrarTodosPokemonsJoin()
+        {
+            var result = new Result<List<PokemonBagJoinDex>>();
+            try
+            {
+                Utilitarios<PokemonBagJoinDex> auxiliar = new Utilitarios<PokemonBagJoinDex>();
+                result.Data = auxiliar.PrintAllPokeBagJoin();
 
+                if (result.Data.Count == 0)
+                {
+                    result.Error = true;
+                    result.Message = Message.NoPokemon;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return BadRequest(result);
+                }
+                else
+                {
+                    result.Error = false;
+                    result.Message = Message.Success;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Error = true;
+                result.Message = Message.NoSuccess + ex.Message;
+                result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                return NotFound(result);
+            }
+        }
+        
         [HttpGet]
         [Route("pokemonsPorCidade")] //Listar todos os pokémons de uma cidade  - Funcionando
         public ActionResult MostrarPokemonsCidade(int idCidade) 
