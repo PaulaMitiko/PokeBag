@@ -236,22 +236,22 @@ namespace PokemonGo.Context.Utilitarios
         //##################//
         //EXCLUIR UM POKEMON//
         //##################//
-        public string TransferirPokeBag(int idPokemon) //Funcionando
+        public List<PokemonBag> TransferirPokeBag(int idPokemon) //Funcionando
         {
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
             {
                 var pokemonTransferido = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
+                List<PokemonBag> aux = new List<PokemonBag>();
 
                 if (pokemonTransferido != null)
                 {
+                    aux.Add(pokemonTransferido);
                     meusPokemons.PokemonBag.Remove(pokemonTransferido);
                     meusPokemons.SaveChanges();
-                    return Message.SuccessTransferir;
                 }
-                else
-                    return Message.NoSuccessTransferir;
+                return aux;
             }
         }
         public string ExcluirCidade(int idCidade) 

@@ -232,8 +232,18 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
-                result.Message = auxiliar.TransferirPokeBag(idPokemon);
-             
+                result.Data = auxiliar.TransferirPokeBag(idPokemon);
+
+                if (result.Data is null)
+                {
+                    result.Error = true;
+                    result.Message = Message.NoSuccessTransferir;
+                }
+                else 
+                {
+                    result.Error = false;
+                    result.Message = Message.SuccessTransferir;
+                }
                 return Ok(result);
             }
             catch (Exception ex)
