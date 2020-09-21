@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txt_Especie = new System.Windows.Forms.TextBox();
             this.btn_ExibirTipo = new System.Windows.Forms.Button();
             this.lbl_Título = new System.Windows.Forms.Label();
             this.btn_ExibirTodos = new System.Windows.Forms.Button();
@@ -37,6 +36,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
+            this.box_Especie = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -44,23 +44,16 @@
             // panel1
             // 
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.Controls.Add(this.txt_Especie);
+            this.panel1.Controls.Add(this.box_Especie);
             this.panel1.Controls.Add(this.btn_ExibirTipo);
             this.panel1.Location = new System.Drawing.Point(3, 401);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(583, 50);
+            this.panel1.Size = new System.Drawing.Size(603, 50);
             this.panel1.TabIndex = 7;
-            // 
-            // txt_Especie
-            // 
-            this.txt_Especie.Location = new System.Drawing.Point(220, 13);
-            this.txt_Especie.Name = "txt_Especie";
-            this.txt_Especie.Size = new System.Drawing.Size(150, 31);
-            this.txt_Especie.TabIndex = 3;
             // 
             // btn_ExibirTipo
             // 
-            this.btn_ExibirTipo.Location = new System.Drawing.Point(407, 13);
+            this.btn_ExibirTipo.Location = new System.Drawing.Point(427, 13);
             this.btn_ExibirTipo.Name = "btn_ExibirTipo";
             this.btn_ExibirTipo.Size = new System.Drawing.Size(176, 34);
             this.btn_ExibirTipo.TabIndex = 0;
@@ -80,7 +73,7 @@
             // 
             // btn_ExibirTodos
             // 
-            this.btn_ExibirTodos.Location = new System.Drawing.Point(410, 374);
+            this.btn_ExibirTodos.Location = new System.Drawing.Point(430, 374);
             this.btn_ExibirTodos.Name = "btn_ExibirTodos";
             this.btn_ExibirTodos.Size = new System.Drawing.Size(176, 34);
             this.btn_ExibirTodos.TabIndex = 0;
@@ -93,9 +86,9 @@
             this.lbl_Tipo.AutoSize = true;
             this.lbl_Tipo.Location = new System.Drawing.Point(12, 416);
             this.lbl_Tipo.Name = "lbl_Tipo";
-            this.lbl_Tipo.Size = new System.Drawing.Size(205, 25);
+            this.lbl_Tipo.Size = new System.Drawing.Size(222, 25);
             this.lbl_Tipo.TabIndex = 2;
-            this.lbl_Tipo.Text = "Informe o tipo desejado";
+            this.lbl_Tipo.Text = "Informea espécie desejada";
             // 
             // dataGridView1
             // 
@@ -109,7 +102,7 @@
             // 
             // btn_Voltar
             // 
-            this.btn_Voltar.Location = new System.Drawing.Point(592, 374);
+            this.btn_Voltar.Location = new System.Drawing.Point(612, 374);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(176, 34);
             this.btn_Voltar.TabIndex = 0;
@@ -119,13 +112,21 @@
             // 
             // btn_Sair
             // 
-            this.btn_Sair.Location = new System.Drawing.Point(592, 414);
+            this.btn_Sair.Location = new System.Drawing.Point(612, 414);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(176, 34);
             this.btn_Sair.TabIndex = 0;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
+            // box_Especie
+            // 
+            this.box_Especie.FormattingEnabled = true;
+            this.box_Especie.Location = new System.Drawing.Point(239, 12);
+            this.box_Especie.Name = "box_Especie";
+            this.box_Especie.Size = new System.Drawing.Size(182, 33);
+            this.box_Especie.TabIndex = 1;
             // 
             // FormExibirPokeBag
             // 
@@ -142,7 +143,6 @@
             this.Name = "FormExibirPokeBag";
             this.Text = "FormExibir";
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -153,12 +153,12 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lbl_Título;
-        private System.Windows.Forms.TextBox txt_Especie;
         private System.Windows.Forms.Button btn_ExibirTodos;
         private System.Windows.Forms.Button btn_ExibirTipo;
         private System.Windows.Forms.Label lbl_Tipo;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btn_Voltar;
         private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.ComboBox box_Especie;
     }
 }

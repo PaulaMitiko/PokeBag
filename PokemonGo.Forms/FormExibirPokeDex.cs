@@ -114,6 +114,10 @@ namespace PokemonGo.Forms
             this.dataGridView1.Columns["Bag"].Visible = false;
 
             box_Tipo.Text = "";
+
+            var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
+
+            if (resultBody.Error) MessageBox.Show(resultBody.Message);
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
