@@ -36,14 +36,14 @@ namespace PokemonGo.Manager.Controllers
 
         [HttpGet]
         [Route("pokemonsDaBag")] //Listar todos os pokémons de uma espécie  - Funcionando
-        public ActionResult MostrarPokemonsEspecie(int EspeciePokemon) //Vou ter que buscar na tabela PokeDex
+        public ActionResult MostrarPokemonsEspecie(string EspeciePokemon) //Vou ter que buscar na tabela PokeDex
                                                                        //o id da especie ao buscar o nome dela.
                                                                        //Mas não precisa disso agora.
         {
-            var result = new Result<List<PokemonBag>>();
+            var result = new Result<List<PokemonBagJoinDex>>();
             try
             {
-                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                Utilitarios<PokemonBagJoinDex> auxiliar = new Utilitarios<PokemonBagJoinDex>();
                 result.Data = auxiliar.PrintPokeBag(EspeciePokemon);
 
                 if (result.Data.Count == 0)

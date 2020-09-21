@@ -25,7 +25,7 @@ namespace PokemonGo.Forms
             result.Wait();
 
             var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokemonBag> lista = new List<PokemonBag>();
+            List<PokemonBagJoinDex> lista = new List<PokemonBagJoinDex>();
 
             foreach (var pokemon in data)
             {
@@ -33,21 +33,21 @@ namespace PokemonGo.Forms
             }
 
             this.dataGridView1.DataSource = lista;
-            //this.dataGridView1.Columns["Bag"].Visible = false;
-            //this.dataGridView1.Columns["Bag"].Visible = false;
+            this.dataGridView1.Columns["IndividualValue"].DefaultCellStyle.Format = "P";
+            this.dataGridView1.Columns["Cidade"].Visible = false;
+            this.dataGridView1.Columns["PokeDex"].Visible = false;
         }
 
         class Root
         {
-            public List<PokemonBag> Data { get; set; }
+            public List<PokemonBagJoinDex> Data { get; set; }
         }
 
         private void btn_ExibirTipo_Click(object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokebag/pokemonsDaBag";
-            var converteu = int.TryParse(txt_Especie.Text, out int especie);
-            if (!converteu) { especie = 0; }
+            var especie = txt_Especie.Text;
             var resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={especie}");
             resultRequest.Wait();
 
@@ -55,7 +55,7 @@ namespace PokemonGo.Forms
             result.Wait();
 
             var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokemonBag> lista = new List<PokemonBag>();
+            List<PokemonBagJoinDex> lista = new List<PokemonBagJoinDex>();
 
             foreach (var pokemon in data)
             {
@@ -63,6 +63,7 @@ namespace PokemonGo.Forms
             }
 
             this.dataGridView1.DataSource = lista;
+            this.dataGridView1.Columns["IndividualValue"].DefaultCellStyle.Format = "P";
             this.dataGridView1.Columns["Cidade"].Visible = false;
             this.dataGridView1.Columns["PokeDex"].Visible = false;
 

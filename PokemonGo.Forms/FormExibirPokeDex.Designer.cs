@@ -34,11 +34,11 @@
             this.lbl_Título = new System.Windows.Forms.Label();
             this.btn_Id = new System.Windows.Forms.Button();
             this.btn_Tipo = new System.Windows.Forms.Button();
-            this.txt_Id = new System.Windows.Forms.TextBox();
             this.box_Tipo = new System.Windows.Forms.ComboBox();
             this.btn_Todos = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
             this.btn_Voltar = new System.Windows.Forms.Button();
+            this.box_Id = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,13 +100,6 @@
             this.btn_Tipo.UseVisualStyleBackColor = true;
             this.btn_Tipo.Click += new System.EventHandler(this.btn_Tipo_Click);
             // 
-            // txt_Id
-            // 
-            this.txt_Id.Location = new System.Drawing.Point(325, 380);
-            this.txt_Id.Name = "txt_Id";
-            this.txt_Id.Size = new System.Drawing.Size(182, 31);
-            this.txt_Id.TabIndex = 3;
-            // 
             // box_Tipo
             // 
             this.box_Tipo.FormattingEnabled = true;
@@ -164,16 +157,24 @@
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
+            // box_Id
+            // 
+            this.box_Id.FormattingEnabled = true;
+            this.box_Id.Location = new System.Drawing.Point(325, 377);
+            this.box_Id.Name = "box_Id";
+            this.box_Id.Size = new System.Drawing.Size(182, 33);
+            this.box_Id.TabIndex = 6;
+            // 
             // FormExibirPokeDex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1007, 471);
+            this.Controls.Add(this.box_Id);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Todos);
             this.Controls.Add(this.box_Tipo);
-            this.Controls.Add(this.txt_Id);
             this.Controls.Add(this.btn_Tipo);
             this.Controls.Add(this.btn_Id);
             this.Controls.Add(this.lbl_Título);
@@ -196,10 +197,10 @@
         private System.Windows.Forms.Label lbl_Título;
         private System.Windows.Forms.Button btn_Id;
         private System.Windows.Forms.Button btn_Tipo;
-        private System.Windows.Forms.TextBox txt_Id;
         private System.Windows.Forms.ComboBox box_Tipo;
         private System.Windows.Forms.Button btn_Todos;
         private System.Windows.Forms.Button btn_Sair;
         private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.ComboBox box_Id;
     }
 }
