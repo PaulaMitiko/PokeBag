@@ -213,6 +213,7 @@
             // 
             this.box_Evol.FormattingEnabled = true;
             this.box_Evol.Items.AddRange(new object[] {
+            "Não possui evolução",
             "12",
             "25",
             "50",
@@ -240,6 +241,7 @@
             // 
             this.box_Egg.FormattingEnabled = true;
             this.box_Egg.Items.AddRange(new object[] {
+            "Não possui egg",
             "2 km",
             "5 km",
             "7 km",

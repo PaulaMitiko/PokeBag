@@ -17,12 +17,23 @@ namespace PokemonGo.Manager.Controllers
             var result = new Result<PokeDex>();
             try
             {
-                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
-                auxiliar.AddPokeDex(pokemon);
-                result.Error = false;
-                result.Message = Message.SuccessAdd;
+                if (pokemon.Id != 0)
+                { 
+                    Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
+                    auxiliar.AddPokeDex(pokemon);
+                    result.Error = false;
+                    result.Message = Message.SuccessAdd;
 
-                return Ok(result);
+                    return Ok(result);
+                }
+                else
+                {
+                    result.Error = true;
+                    result.Message = Message.NoSuccess;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return Ok(result);
+                }
             }
             catch (Exception ex)
             {

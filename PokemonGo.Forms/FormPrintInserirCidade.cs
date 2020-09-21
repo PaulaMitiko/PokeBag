@@ -1,11 +1,8 @@
 ﻿using Newtonsoft.Json;
 using PokemonGo.Context.Models;
+using PokemonGo.Context.Utilitarios;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Windows.Forms;
@@ -25,7 +22,8 @@ namespace PokemonGo.Forms
             Cidade newCidade = new Cidade()
             {
                 NomeCidade = txt_Cidade.Text,
-                Pais = txt_Pais.Text
+                Pais = txt_Pais.Text,
+                QtdePokemons = 0
             };
 
             var newCidadeJson = JsonConvert.SerializeObject(newCidade);
@@ -39,25 +37,14 @@ namespace PokemonGo.Forms
             var result = resultRequest.Result.Content.ReadAsStringAsync();
             result.Wait();
 
-            //var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
-            MessageBox.Show("Cidade inserida com sucesso!");
+            var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
+            MessageBox.Show(resultBody.Message);
 
             txt_Cidade.Text = "";
             txt_Pais.Text = "";
 
             Exibir();
         }
-
-        private void btn_Voltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btn_Sair_Click(object sender, EventArgs e)
-        {
-            Environment.Exit(0);
-        }
-
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
             var httpClient = new HttpClient();
@@ -71,7 +58,10 @@ namespace PokemonGo.Forms
             var result = resultRequest.Result.Content.ReadAsStringAsync();
             result.Wait();
 
-            MessageBox.Show("Cidade excluida com sucesso!");
+            var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
+            MessageBox.Show(resultBody.Message);
+
+            txt_Id.Text = "";
 
             Exibir();
         }
@@ -97,10 +87,18 @@ namespace PokemonGo.Forms
             this.DataGrid.DataSource = lista;
             this.DataGrid.Columns["Bag"].Visible = false;
         }
-
         class Root
         {
             public List<Cidade> Data { get; set; }
+        }
+        private void btn_Voltar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_Sair_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }
