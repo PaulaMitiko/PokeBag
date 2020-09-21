@@ -286,10 +286,14 @@ namespace PokemonGo.Context.Utilitarios
 
                 if (pokemon != null)
                 {
-                    pokemon.CombatPoints = novoCP;
-                    pokemon.HealthPoints = novoHP;
-                    meusPokemons.SaveChanges();
-                    return Message.SuccessAlter;
+                    if (novoCP >= pokemon.CombatPoints && novoHP >= pokemon.HealthPoints)
+                    {
+                        pokemon.CombatPoints = novoCP;
+                        pokemon.HealthPoints = novoHP;
+                        meusPokemons.SaveChanges();
+                        return Message.SuccessAlter;
+                    }
+                    else return Message.NoSuccessAlter;
                 }
                 else
                     return Message.NoSuccessAlter;
@@ -315,7 +319,7 @@ namespace PokemonGo.Context.Utilitarios
             }
         }
 
-        public string AlterarPokeDex(int idPokemon, int novoCP)
+        public string AlterarPokeDex(int idPokemon, int novoCP, int novoLvl35, int novoEgg)
         {
             meusPokemons = new PokemonGoContext();
 
@@ -325,7 +329,20 @@ namespace PokemonGo.Context.Utilitarios
 
                 if (pokemon != null)
                 {
-                    pokemon.CPMax = novoCP;
+                    if (novoCP != 0 && novoLvl35 != 0)
+                    {
+                        pokemon.CPMax = novoCP;
+                        pokemon.CPLvl35 = novoLvl35;
+                    }
+                    if (pokemon.EggKm != novoEgg)
+                    {
+                        pokemon.EggKm = novoEgg;
+                    }
+                    else if (novoCP == 0 || novoLvl35 == 0) 
+                    {
+                        return Message.NoSuccessAlter;
+                    }
+                    
                     meusPokemons.SaveChanges();
                     return Message.SuccessAlter;
                 }

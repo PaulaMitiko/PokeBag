@@ -177,14 +177,14 @@ namespace PokemonGo.Manager.Controllers
 
         [HttpPut] 
         [Route("alterarDados")] //Alterar os dados de um pokémon 
-        public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP)
+        public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP, int novoLvl35, int novoEgg)
         {
             var result = new Result<List<PokeDex>>();
 
             try
             {
                 Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
-                result.Message = auxiliar.AlterarPokeDex(idPokemon, novoCP);
+                result.Message = auxiliar.AlterarPokeDex(idPokemon, novoCP, novoLvl35, novoEgg);
                 return Ok(result);
                 
             }

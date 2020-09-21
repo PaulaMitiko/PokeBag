@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PokemonGo.Context.Models;
+using PokemonGo.Context.Utilitarios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,20 +21,29 @@ namespace PokemonGo.Forms
 
         private void btn_Excluir_Click(object sender, EventArgs e)
         {
-            var httpClient = new HttpClient();
-            var URL = "http://localhost:5000/Pokebag/pokemonTransferido";
+            try
+            {
+                var httpClient = new HttpClient();
+                var URL = "http://localhost:5000/Pokebag/pokemonTransferido";
 
-            int idPokemon = Convert.ToInt32(txt_IdPokemon.Text);
+                int idPokemon = Convert.ToInt32(txt_IdPokemon.Text);
 
-            var resultRequest = httpClient.DeleteAsync($"{URL}?idPokemon={idPokemon}");
-            resultRequest.Wait();
+                var resultRequest = httpClient.DeleteAsync($"{URL}?idPokemon={idPokemon}");
+                resultRequest.Wait();
 
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
+                var result = resultRequest.Result.Content.ReadAsStringAsync();
+                result.Wait();
 
-            MessageBox.Show("Vish");
+                var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
 
-            txt_IdPokemon.Text = "";
+                MessageBox.Show(resultBody.Message);
+
+                txt_IdPokemon.Text = "";
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
@@ -42,6 +54,14 @@ namespace PokemonGo.Forms
         private void btn_Sair_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void lbl_Consultar_Click(object sender, EventArgs e)
+        {
+            var exibir = new FormExibirPokeBag();
+            this.Hide();
+            exibir.ShowDialog();
+            this.Show();
         }
     }
 }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using PokemonGo.Context.Models;
+using PokemonGo.Context.Utilitarios;
+using System;
 using System.Net.Http;
 using System.Windows.Forms;
 
@@ -17,9 +20,9 @@ namespace PokemonGo.Forms
             var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokebag/alterarStats";
 
-            int idPokemon = Convert.ToInt32(txt_NoPokemon.Text);
-            int novoCP = Convert.ToInt32(txt_CP.Text);
-            int novoHP = Convert.ToInt32(txt_HP.Text);
+            int.TryParse(txt_NoPokemon.Text, out int idPokemon);
+            int.TryParse(txt_CP.Text, out int novoCP);
+            int.TryParse(txt_HP.Text, out int novoHP);
 
             var resultRequest = httpClient.PutAsync($"{URL}?idPokemon={idPokemon}&novoCP={novoCP}&novoHP={novoHP}", null);
             resultRequest.Wait();
@@ -27,9 +30,9 @@ namespace PokemonGo.Forms
             var result = resultRequest.Result.Content.ReadAsStringAsync();
             result.Wait();
 
-            //var resultBody = JsonConvert.DeserializeObject<Result<PokemonBag>>(result.Result);
-            //MessageBox.Show(resultBody.Message);
-            MessageBox.Show("Stats alterado com sucesso");
+            var resultBody = JsonConvert.DeserializeObject<Result<PokemonBag>>(result.Result);
+            MessageBox.Show(resultBody.Message);
+            
 
             txt_NoPokemon.Text = "";
             txt_CP.Text = "";
@@ -44,6 +47,14 @@ namespace PokemonGo.Forms
         private void btn_Sair_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void lbl_Consultar_Click(object sender, EventArgs e)
+        {
+            var exibir = new FormExibirPokeBag();
+            this.Hide();
+            exibir.ShowDialog();
+            this.Show();
         }
     }
 }

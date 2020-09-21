@@ -38,6 +38,7 @@
             this.btn_Save = new System.Windows.Forms.Button();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
+            this.lbl_Consultar = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl_Título
@@ -128,11 +129,22 @@
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
             // 
+            // lbl_Consultar
+            // 
+            this.lbl_Consultar.AutoSize = true;
+            this.lbl_Consultar.Location = new System.Drawing.Point(12, 416);
+            this.lbl_Consultar.Name = "lbl_Consultar";
+            this.lbl_Consultar.Size = new System.Drawing.Size(435, 25);
+            this.lbl_Consultar.TabIndex = 2;
+            this.lbl_Consultar.Text = "Não sei o Id do pokémon. Clique aqui para consultar.";
+            this.lbl_Consultar.Click += new System.EventHandler(this.lbl_Consultar_Click);
+            // 
             // FormAlterarPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lbl_Consultar);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Save);
@@ -162,5 +174,6 @@
         private System.Windows.Forms.Button btn_Save;
         private System.Windows.Forms.Button btn_Voltar;
         private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.Label lbl_Consultar;
     }
 }

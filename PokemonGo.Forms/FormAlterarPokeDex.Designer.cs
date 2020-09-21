@@ -36,13 +36,18 @@
             this.btn_Salvar = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
             this.btn_Voltar = new System.Windows.Forms.Button();
+            this.lbl_Lvl35 = new System.Windows.Forms.Label();
+            this.txt_Lvl35 = new System.Windows.Forms.TextBox();
+            this.lbl_Consulta = new System.Windows.Forms.Label();
+            this.lbl_Egg = new System.Windows.Forms.Label();
+            this.box_Egg = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // txt_Id
             // 
-            this.txt_Id.Location = new System.Drawing.Point(443, 95);
+            this.txt_Id.Location = new System.Drawing.Point(457, 95);
             this.txt_Id.Name = "txt_Id";
-            this.txt_Id.Size = new System.Drawing.Size(150, 31);
+            this.txt_Id.Size = new System.Drawing.Size(182, 31);
             this.txt_Id.TabIndex = 0;
             // 
             // lbl_Id
@@ -75,14 +80,14 @@
             // 
             // txt_CP
             // 
-            this.txt_CP.Location = new System.Drawing.Point(443, 137);
+            this.txt_CP.Location = new System.Drawing.Point(457, 137);
             this.txt_CP.Name = "txt_CP";
-            this.txt_CP.Size = new System.Drawing.Size(150, 31);
+            this.txt_CP.Size = new System.Drawing.Size(182, 31);
             this.txt_CP.TabIndex = 0;
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(281, 248);
+            this.btn_Salvar.Location = new System.Drawing.Point(287, 282);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(190, 34);
             this.btn_Salvar.TabIndex = 2;
@@ -110,11 +115,65 @@
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
             // 
+            // lbl_Lvl35
+            // 
+            this.lbl_Lvl35.AutoSize = true;
+            this.lbl_Lvl35.Location = new System.Drawing.Point(181, 183);
+            this.lbl_Lvl35.Name = "lbl_Lvl35";
+            this.lbl_Lvl35.Size = new System.Drawing.Size(258, 25);
+            this.lbl_Lvl35.TabIndex = 1;
+            this.lbl_Lvl35.Text = "Informe o novo CP no Level 35";
+            // 
+            // txt_Lvl35
+            // 
+            this.txt_Lvl35.Location = new System.Drawing.Point(457, 177);
+            this.txt_Lvl35.Name = "txt_Lvl35";
+            this.txt_Lvl35.Size = new System.Drawing.Size(182, 31);
+            this.txt_Lvl35.TabIndex = 0;
+            // 
+            // lbl_Consulta
+            // 
+            this.lbl_Consulta.AutoSize = true;
+            this.lbl_Consulta.Location = new System.Drawing.Point(13, 403);
+            this.lbl_Consulta.Name = "lbl_Consulta";
+            this.lbl_Consulta.Size = new System.Drawing.Size(485, 25);
+            this.lbl_Consulta.TabIndex = 3;
+            this.lbl_Consulta.Text = "Não sei o número do pokémon. Cliquei aqui para consultar.";
+            this.lbl_Consulta.Click += new System.EventHandler(this.lbl_Consulta_Click);
+            // 
+            // lbl_Egg
+            // 
+            this.lbl_Egg.AutoSize = true;
+            this.lbl_Egg.Location = new System.Drawing.Point(181, 227);
+            this.lbl_Egg.Name = "lbl_Egg";
+            this.lbl_Egg.Size = new System.Drawing.Size(235, 25);
+            this.lbl_Egg.TabIndex = 1;
+            this.lbl_Egg.Text = "Informe o novo tipo de egg";
+            // 
+            // box_Egg
+            // 
+            this.box_Egg.FormattingEnabled = true;
+            this.box_Egg.Items.AddRange(new object[] {
+            "2 km",
+            "5 km",
+            "7 km",
+            "10 km",
+            "Não possui egg"});
+            this.box_Egg.Location = new System.Drawing.Point(457, 227);
+            this.box_Egg.Name = "box_Egg";
+            this.box_Egg.Size = new System.Drawing.Size(182, 33);
+            this.box_Egg.TabIndex = 4;
+            // 
             // FormAlterarPokeDex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.box_Egg);
+            this.Controls.Add(this.lbl_Egg);
+            this.Controls.Add(this.lbl_Consulta);
+            this.Controls.Add(this.txt_Lvl35);
+            this.Controls.Add(this.lbl_Lvl35);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Salvar);
@@ -140,5 +199,10 @@
         private System.Windows.Forms.Button btn_Salvar;
         private System.Windows.Forms.Button btn_Sair;
         private System.Windows.Forms.Button btn_Voltar;
+        private System.Windows.Forms.Label lbl_Lvl35;
+        private System.Windows.Forms.TextBox txt_Lvl35;
+        private System.Windows.Forms.Label lbl_Consulta;
+        private System.Windows.Forms.Label lbl_Egg;
+        private System.Windows.Forms.ComboBox box_Egg;
     }
 }

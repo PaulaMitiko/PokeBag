@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,7 +22,7 @@ namespace PokemonGo.Forms
         private void btn_Save_Click(object sender, EventArgs e)
         {
             int.TryParse(txt_Id.Text, out int nopoke);
-            int.TryParse(box_Egg.Text, out int egg);
+            int.TryParse((Regex.Match(box_Egg.Text,@"\d+").Value), out int egg);
             int.TryParse(box_Evol.Text, out int evol);
             int.TryParse(box_Buddy.Text, out int buddy);
             int.TryParse(txt_CPMax.Text, out int cpmax);
