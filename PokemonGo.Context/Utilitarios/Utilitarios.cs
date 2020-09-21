@@ -50,6 +50,15 @@ namespace PokemonGo.Context.Utilitarios
             }
         }
 
+        public List<PokemonBag> PrintPokeBagCidade(int idCidade) //Testado - OK
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                return meusPokemons.PokemonBag.Where(x => x.IdCidade.Equals(idCidade)).ToList();
+            }
+        }
         public List<PokeDex> PrintPokeDex(int especiePokemon) 
         {
             meusPokemons = new PokemonGoContext();
@@ -165,6 +174,25 @@ namespace PokemonGo.Context.Utilitarios
                 {
                     pokemon.CombatPoints = novoCP;
                     pokemon.HealthPoints = novoHP;
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessAlter;
+                }
+                else
+                    return Message.NoSuccessAlter;
+            }
+        }
+
+        public string AlterarPokeBagTransferir(int idPokemon, bool novoStatus) //Funcionando
+        {
+            meusPokemons = new PokemonGoContext();
+
+            using (meusPokemons)
+            {
+                var pokemon = meusPokemons.PokemonBag.FirstOrDefault(q => q.Id == idPokemon);
+
+                if (pokemon != null)
+                {
+                    pokemon.Transferir = novoStatus;
                     meusPokemons.SaveChanges();
                     return Message.SuccessAlter;
                 }

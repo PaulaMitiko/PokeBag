@@ -13,7 +13,7 @@ namespace PokemonGo.Context.Models
         public int? EggKm { get; set; }
         public int CPMax { get; set; }
         public int CPLvl35 { get; set; }
-        public int QtdePokemon { get; set; }
+        public int? QtdePokemon { get; set; }
 
         public virtual ICollection<PokemonBag> Bag { get; set; } = new HashSet<PokemonBag>();
     }

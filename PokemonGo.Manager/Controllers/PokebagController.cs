@@ -110,6 +110,43 @@ namespace PokemonGo.Manager.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("pokemonsPorCidade")] //Listar todos os pokémons de uma cidade  - Funcionando
+        public ActionResult MostrarPokemonsCidade(int idCidade) 
+        {
+            var result = new Result<List<PokemonBag>>();
+            try
+            {
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                result.Data = auxiliar.PrintPokeBagCidade(idCidade);
+
+                if (result.Data.Count == 0)
+                {
+                    result.Error = true;
+                    result.Message = Message.NoPokemonType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return BadRequest(result);
+                }
+                else
+                {
+                    result.Error = false;
+                    result.Message = Message.SuccessType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Error = true;
+                result.Message = Message.NoSuccess + ex.Message;
+                result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                return NotFound(result);
+            }
+        }
+
         [HttpDelete]
         [Route("pokemonTransferido")] //Excluir um pokémon que foi transferido - Funcionando
         public ActionResult RemoverPokemonTransferido(int idPokemon) //Vou ter que achar uma forma de encontrar o id
@@ -147,7 +184,24 @@ namespace PokemonGo.Manager.Controllers
             {
                 return BadRequest(ex.Message);
             }
+        }
+        [HttpPut]
+        [Route("alterarTransferir")] //Alterar os stats de um pokémon - Funcionando
+        public ActionResult AlterarTransferirDoPokemon(int idPokemon, bool novoStatus)
+        {
+            var result = new Result<List<PokemonBag>>();
 
+            try
+            {
+                Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
+                result.Message = auxiliar.AlterarPokeBagTransferir(idPokemon, novoStatus);
+                return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

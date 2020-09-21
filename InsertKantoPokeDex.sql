@@ -46,7 +46,16 @@ INSERT INTO PokeDex VALUES
 (45, 'Vileplume', 'Grass', 'Poison', NULL, 3, NULL, 2559, 2036);
 
 INSERT INTO Cidade VALUES
-('Maringá','Brasil'),
-('Bombinhas', 'Brasil'),
-('Curitiba','Brasil'),
-('Winter Garden', 'Estados Unidos');
+('Maringá','Brasil',0),
+('Bombinhas', 'Brasil',0),
+('Curitiba','Brasil',0),
+('Winter Garden', 'Estados Unidos',0);
+
+select * from PokemonBag;
+select * from PokeDex;
+select * from cidade;
+
+update PokeDex set QtdePokemon = 0;
+
+
+
