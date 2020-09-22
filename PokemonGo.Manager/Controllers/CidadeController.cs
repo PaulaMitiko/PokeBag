@@ -18,9 +18,8 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<Cidade> auxiliar = new Utilitarios<Cidade>();
-                auxiliar.AddCidade(cidade);
+                result.Message = auxiliar.AddCidade(cidade);
                 result.Error = false;
-                result.Message = Message.SuccessAdd;
 
                 return Ok(result);
             }

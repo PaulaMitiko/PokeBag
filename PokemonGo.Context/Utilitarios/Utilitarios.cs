@@ -28,13 +28,19 @@ namespace PokemonGo.Context.Utilitarios
                 meusPokemons.SaveChanges();
             }
         }
-        public void AddCidade(Cidade newCidade)
+        public string AddCidade(Cidade newCidade)
         {
             meusPokemons = new PokemonGoContext();
             using (meusPokemons)
             {
-                meusPokemons.Cidade.Add(newCidade);
-                meusPokemons.SaveChanges();
+                var cidadeDuplicada = meusPokemons.Cidade.FirstOrDefault(q => q.NomeCidade == newCidade.NomeCidade);
+                if (cidadeDuplicada is null)
+                {
+                    meusPokemons.Cidade.Add(newCidade);
+                    meusPokemons.SaveChanges();
+                    return Message.SuccessAdd;
+                }
+                else return Message.NoSuccess;
             }
         }
         //##################//
