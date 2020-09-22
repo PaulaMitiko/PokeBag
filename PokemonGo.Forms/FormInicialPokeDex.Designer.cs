@@ -62,7 +62,7 @@
             this.btn_Alterar.Name = "btn_Alterar";
             this.btn_Alterar.Size = new System.Drawing.Size(379, 34);
             this.btn_Alterar.TabIndex = 1;
-            this.btn_Alterar.Text = "Alterar o CP Máximo de um Pokémon";
+            this.btn_Alterar.Text = "Alterardados de um Pokémon";
             this.btn_Alterar.UseVisualStyleBackColor = true;
             this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
             // 

@@ -289,5 +289,79 @@ namespace PokemonGo.Manager.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpGet]
+        [Route("sugestaoTransferir")] //Listar todos os pokémons para transferir  - Funcionando
+        public ActionResult MostrarPokemonsTransferir() 
+        {
+            var result = new Result<List<PokemonBagJoinDex>>();
+            try
+            {
+                Utilitarios<PokemonBagJoinDex> auxiliar = new Utilitarios<PokemonBagJoinDex>();
+                result.Data = auxiliar.PrintPokeBagTransf();
+
+                if (result.Data.Count == 0)
+                {
+                    result.Error = true;
+                    result.Message = Message.NoPokemonType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return BadRequest(result);
+                }
+                else
+                {
+                    result.Error = false;
+                    result.Message = Message.SuccessType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Error = true;
+                result.Message = Message.NoSuccess + ex.Message;
+                result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                return NotFound(result);
+            }
+        }
+
+        [HttpGet]
+        [Route("sugestaoTroca")] //Listar todos os pokémons para transferir  - Funcionando
+        public ActionResult MostrarPokemonsTroca()
+        {
+            var result = new Result<List<PokemonBagJoinDex>>();
+            try
+            {
+                Utilitarios<PokemonBagJoinDex> auxiliar = new Utilitarios<PokemonBagJoinDex>();
+                result.Data = auxiliar.PrintPokeBagTroca();
+
+                if (result.Data.Count == 0)
+                {
+                    result.Error = true;
+                    result.Message = Message.NoPokemonType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return BadRequest(result);
+                }
+                else
+                {
+                    result.Error = false;
+                    result.Message = Message.SuccessType;
+                    result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                    return Ok(result);
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Error = true;
+                result.Message = Message.NoSuccess + ex.Message;
+                result.Status = System.Net.HttpStatusCode.InternalServerError;
+
+                return NotFound(result);
+            }
+        }
     }
 }

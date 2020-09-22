@@ -35,6 +35,7 @@
             this.btn_Exibir = new System.Windows.Forms.Button();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
+            this.btn_Sugestao = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_Título
@@ -89,9 +90,9 @@
             // 
             // btn_Voltar
             // 
-            this.btn_Voltar.Location = new System.Drawing.Point(250, 374);
+            this.btn_Voltar.Location = new System.Drawing.Point(12, 450);
             this.btn_Voltar.Name = "btn_Voltar";
-            this.btn_Voltar.Size = new System.Drawing.Size(293, 56);
+            this.btn_Voltar.Size = new System.Drawing.Size(109, 41);
             this.btn_Voltar.TabIndex = 1;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
@@ -99,19 +100,30 @@
             // 
             // btn_Sair
             // 
-            this.btn_Sair.Location = new System.Drawing.Point(250, 435);
+            this.btn_Sair.Location = new System.Drawing.Point(138, 450);
             this.btn_Sair.Name = "btn_Sair";
-            this.btn_Sair.Size = new System.Drawing.Size(293, 56);
+            this.btn_Sair.Size = new System.Drawing.Size(109, 40);
             this.btn_Sair.TabIndex = 1;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
+            // 
+            // btn_Sugestao
+            // 
+            this.btn_Sugestao.Location = new System.Drawing.Point(250, 352);
+            this.btn_Sugestao.Name = "btn_Sugestao";
+            this.btn_Sugestao.Size = new System.Drawing.Size(293, 56);
+            this.btn_Sugestao.TabIndex = 2;
+            this.btn_Sugestao.Text = "Sugestões de troca e transferência";
+            this.btn_Sugestao.UseVisualStyleBackColor = true;
+            this.btn_Sugestao.Click += new System.EventHandler(this.btn_Sugestao_Click);
             // 
             // FormInicialPokeBag
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 509);
+            this.Controls.Add(this.btn_Sugestao);
             this.Controls.Add(this.btn_Sair);
             this.Controls.Add(this.btn_Voltar);
             this.Controls.Add(this.btn_Exibir);
@@ -135,5 +147,6 @@
         private System.Windows.Forms.Button btn_Exibir;
         private System.Windows.Forms.Button btn_Voltar;
         private System.Windows.Forms.Button btn_Sair;
+        private System.Windows.Forms.Button btn_Sugestao;
     }
 }

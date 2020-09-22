@@ -16,6 +16,9 @@
     <Compile Update="FormExibirPokeDex.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormExibirSugestao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormInicialPokeBag.cs">
       <SubType>Form</SubType>
     </Compile>

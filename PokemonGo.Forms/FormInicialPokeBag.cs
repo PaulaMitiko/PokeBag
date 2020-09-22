@@ -47,6 +47,14 @@ namespace PokemonGo.Forms
             this.Show();
         }
 
+        private void btn_Sugestao_Click(object sender, EventArgs e)
+        {
+            var sugestao = new FormExibirSugestao();
+            this.Hide();
+            sugestao.ShowDialog();
+            this.Show();
+        }
+
         private void btn_Voltar_Click(object sender, EventArgs e)
         {
             this.Close();
