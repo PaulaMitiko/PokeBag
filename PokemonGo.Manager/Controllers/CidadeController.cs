@@ -18,8 +18,8 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<Cidade> auxiliar = new Utilitarios<Cidade>();
-                result.Message = auxiliar.AddCidade(cidade);
-                result.Error = false;
+                result.Error = auxiliar.AddCidade(cidade);
+                result.Message = result.Error ? Message.NoSuccessAdd : Message.SuccessAdd;
 
                 return Ok(result);
             }
@@ -46,7 +46,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemonType;
+                    result.Message = Message.NoCity;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -54,7 +54,7 @@ namespace PokemonGo.Manager.Controllers
                 else
                 {
                     result.Error = false;
-                    result.Message = Message.SuccessType;
+                    result.Message = Message.SuccessCity;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return Ok(result);
@@ -84,7 +84,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemon;
+                    result.Message = Message.NoOneCity;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -92,7 +92,7 @@ namespace PokemonGo.Manager.Controllers
                 else
                 {
                     result.Error = false;
-                    result.Message = Message.Success;
+                    result.Message = Message.SuccessCity;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return Ok(result);
@@ -116,8 +116,9 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<Cidade> auxiliar = new Utilitarios<Cidade>();
-                result.Message = auxiliar.ExcluirCidade(idCidade);
-             
+                result.Error = auxiliar.ExcluirCidade(idCidade);
+                result.Message = result.Error ? Message.NoTransferCity : Message.SuccessTransferCity;
+
                 return Ok(result);
             }
             catch (Exception ex)
@@ -135,9 +136,10 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<Cidade> auxiliar = new Utilitarios<Cidade>();
-                result.Message = auxiliar.AlterarCidade(idCidade, novaContagem);
+                result.Error = auxiliar.AlterarCidade(idCidade, novaContagem);
+                result.Message = result.Error ? Message.NoTransferCity : Message.SuccessCount;
+
                 return Ok(result);
-                
             }
             catch (Exception ex)
             {
