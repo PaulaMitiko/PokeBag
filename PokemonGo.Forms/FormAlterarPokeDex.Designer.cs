@@ -41,6 +41,10 @@
             this.lbl_Consulta = new System.Windows.Forms.Label();
             this.lbl_Egg = new System.Windows.Forms.Label();
             this.box_Egg = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_Id
@@ -87,7 +91,7 @@
             // 
             // btn_Salvar
             // 
-            this.btn_Salvar.Location = new System.Drawing.Point(287, 282);
+            this.btn_Salvar.Location = new System.Drawing.Point(289, 318);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(190, 34);
             this.btn_Salvar.TabIndex = 2;
@@ -144,7 +148,7 @@
             // lbl_Egg
             // 
             this.lbl_Egg.AutoSize = true;
-            this.lbl_Egg.Location = new System.Drawing.Point(181, 227);
+            this.lbl_Egg.Location = new System.Drawing.Point(42, 20);
             this.lbl_Egg.Name = "lbl_Egg";
             this.lbl_Egg.Size = new System.Drawing.Size(235, 25);
             this.lbl_Egg.TabIndex = 1;
@@ -159,18 +163,44 @@
             "7 km",
             "10 km",
             "Não possui egg"});
-            this.box_Egg.Location = new System.Drawing.Point(457, 227);
+            this.box_Egg.Location = new System.Drawing.Point(318, 17);
             this.box_Egg.Name = "box_Egg";
             this.box_Egg.Size = new System.Drawing.Size(182, 33);
             this.box_Egg.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.box_Egg);
+            this.panel1.Controls.Add(this.lbl_Egg);
+            this.panel1.Location = new System.Drawing.Point(139, 247);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(514, 65);
+            this.panel1.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(139, 219);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(33, 25);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "ou";
+            // 
+            // panel2
+            // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Location = new System.Drawing.Point(139, 132);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(514, 84);
+            this.panel2.TabIndex = 7;
             // 
             // FormAlterarPokeDex
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.box_Egg);
-            this.Controls.Add(this.lbl_Egg);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbl_Consulta);
             this.Controls.Add(this.txt_Lvl35);
             this.Controls.Add(this.lbl_Lvl35);
@@ -182,8 +212,12 @@
             this.Controls.Add(this.lbl_CP);
             this.Controls.Add(this.lbl_Id);
             this.Controls.Add(this.txt_Id);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Name = "FormAlterarPokeDex";
             this.Text = "FormAlterarPokeDex";
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +238,8 @@
         private System.Windows.Forms.Label lbl_Consulta;
         private System.Windows.Forms.Label lbl_Egg;
         private System.Windows.Forms.ComboBox box_Egg;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
     }
 }

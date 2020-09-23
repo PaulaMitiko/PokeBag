@@ -17,23 +17,18 @@ namespace PokemonGo.Manager.Controllers
             var result = new Result<PokeDex>();
             try
             {
-                if (pokemon.Id != 0)
+                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
+                result.Error = auxiliar.AddPokeDex(pokemon);
+                if (!result.Error)
                 { 
-                    Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
-                    auxiliar.AddPokeDex(pokemon);
-                    result.Error = false;
                     result.Message = Message.SuccessAdd;
-
-                    return Ok(result);
                 }
                 else
                 {
-                    result.Error = true;
-                    result.Message = Message.NoSuccess;
+                    result.Message = Message.NoSuccessAdd;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
-
-                    return Ok(result);
                 }
+                return Ok(result);
             }
             catch (Exception ex)
             {
@@ -58,7 +53,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemonType;
+                    result.Message = Message.NoPokemonSpecie;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -132,7 +127,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemon;
+                    result.Message = Message.NoPokemonTypes;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -156,6 +151,47 @@ namespace PokemonGo.Manager.Controllers
             }
         }
 
+        [HttpPut] 
+        [Route("alterarDados")] //Alterar os dados de um pokémon 
+        public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP, int novoLvl35, int novoEgg)
+        {
+            var result = new Result<List<PokeDex>>();
+
+            try
+            {
+                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
+                result.Error = auxiliar.AlterarPokeDex(idPokemon, novoCP, novoLvl35, novoEgg);
+                result.Message = result.Error ? Message.NoSuccessAlter : Message.SuccessAlter;
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(Message.NoSuccess + ex.Message);
+            }
+
+        }
+
+        [HttpPut]
+        [Route("atualizarContagem")] //Atualizar contagem
+        public ActionResult AlterarContagem(int idPokemon, int novaContagem)
+        {
+            var result = new Result<List<PokeDex>>();
+
+            try
+            {
+                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
+                result.Error = auxiliar.AlterarContagemPokemon(idPokemon, novaContagem);
+                result.Message = result.Error ? Message.NoSuccessAlter : Message.SuccessAlter;
+                return Ok(result);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(Message.NoSuccess + ex.Message);
+            }
+
+        }
+
         /*Não se deleta pokemon da PokeDex .-.
         [HttpDelete]
         [Route("pokemonTransferido")] 
@@ -174,45 +210,5 @@ namespace PokemonGo.Manager.Controllers
                 return BadRequest(ex.Message);
             }
         }*/
-
-        [HttpPut] 
-        [Route("alterarDados")] //Alterar os dados de um pokémon 
-        public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP, int novoLvl35, int novoEgg)
-        {
-            var result = new Result<List<PokeDex>>();
-
-            try
-            {
-                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
-                result.Message = auxiliar.AlterarPokeDex(idPokemon, novoCP, novoLvl35, novoEgg);
-                return Ok(result);
-                
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-        }
-
-        [HttpPut]
-        [Route("atualizarContagem")] //Atualizar contagem
-        public ActionResult AlterarContagem(int idPokemon, int novaContagem)
-        {
-            var result = new Result<List<PokeDex>>();
-
-            try
-            {
-                Utilitarios<PokeDex> auxiliar = new Utilitarios<PokeDex>();
-                result.Message = auxiliar.AlterarContagemPokemon(idPokemon, novaContagem);
-                return Ok(result);
-
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-
-        }
     }
 }
