@@ -3,7 +3,7 @@ using PokemonGo.Context.Models;
 using PokemonGo.Context.Utilitarios;
 
 namespace PokemonGo.Tests
-{
+{/*
     [TestClass]
     public class TestesPokeDex
     {
@@ -127,5 +127,5 @@ namespace PokemonGo.Tests
             var util = new Utilitarios<PokeDex>();
             Assert.IsTrue(util.AlterarContagemPokemon(3001, 3));
         }
-    }
+    }*/
 }

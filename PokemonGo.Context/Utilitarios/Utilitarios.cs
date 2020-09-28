@@ -13,16 +13,23 @@ namespace PokemonGo.Context.Utilitarios
         //ADICIONAR ITENS AO BANCO//
         //########################//
 
-        public void AddPokeBag(PokemonBag pokemon)
-        {
+        public bool AddPokeBag(PokemonBag pokemon)
+        {//Inserir um novo pokémon no banco - pokemonCapturado
             meusPokemons = new PokemonGoContext();
             using (meusPokemons) 
             {
-                meusPokemons.PokemonBag.Add(pokemon);
-                meusPokemons.SaveChanges();
+                try
+                {
+                    meusPokemons.PokemonBag.Add(pokemon);
+                    meusPokemons.SaveChanges();
+                    return false;
+                }
+                catch 
+                {
+                    return true;
+                }
             }
         }
-
         public bool AddPokeDex(PokeDex newType)
         {//Inserir nova espécie de pokémon no banco caso não seja repetido - pokemonNovo
             meusPokemons = new PokemonGoContext();
@@ -39,7 +46,6 @@ namespace PokemonGo.Context.Utilitarios
                 else return true;
             }
         }
-
         public bool AddCidade(Cidade newCidade)
         {//Inserir nova cidade no banco caso não seja repetido - cadastrarCidade
             meusPokemons = new PokemonGoContext();
@@ -60,8 +66,8 @@ namespace PokemonGo.Context.Utilitarios
         //##################//
         //PRINTAR ESPECÍFICO//
         //##################//
-        public List<PokemonBag> PrintPokeBag(int especiePokemon) 
-        {
+        public List<PokemonBag> PrintPokeBag(int especiePokemon)
+        {//Listar todos os pokémons capturados de uma espécie - pokemonsDaBag
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -69,8 +75,8 @@ namespace PokemonGo.Context.Utilitarios
                 return meusPokemons.PokemonBag.Where(x => x.IdPokemonType.Equals(especiePokemon)).ToList();
             }
         }
-        public List<PokemonBagJoinDex> PrintPokeBag(string especiePokemon) 
-        {
+        public List<PokemonBagJoinDex> PrintPokeBag(string especiePokemon)
+        {//Listar todos os pokémons capturados de uma espécie - pokemonsDaBagstring
             meusPokemons = new PokemonGoContext();
             
             using (meusPokemons)
@@ -126,9 +132,8 @@ namespace PokemonGo.Context.Utilitarios
                 return BagJoinDex;
             }
         }
-
-        public List<PokemonBagJoinDex> PrintPokeBagTransf() 
-        {
+        public List<PokemonBagJoinDex> PrintPokeBagTransf()
+        {//Listar todos os pokémons que são para transferir - sugestaoTransferir
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -184,9 +189,8 @@ namespace PokemonGo.Context.Utilitarios
                 return BagJoinDex;
             }
         }
-
-        public List<PokemonBagJoinDex> PrintPokeBagTroca() 
-        {
+        public List<PokemonBagJoinDex> PrintPokeBagTroca()
+        {//Listar todos os pokémons que são para trocar - sugestaoTroca
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -242,9 +246,8 @@ namespace PokemonGo.Context.Utilitarios
                 return BagJoinDex;
             }
         }
-
-        public List<PokemonBag> PrintPokeBagCidade(int idCidade) 
-        {
+        public List<PokemonBag> PrintPokeBagCidade(int idCidade)
+        {//Listar todos os pokémons capturados em uma cidade (auxiliar de outra tabela) - pokemonsPorCidade
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -261,7 +264,6 @@ namespace PokemonGo.Context.Utilitarios
                 return meusPokemons.PokeDex.Where(x => x.Id.Equals(especiePokemon)).ToList();
             }
         }
-
         public List<PokeDex> PrintPokeDexType(string tipoPokemon)
         {//Listar informações de todas as espécies de pokémon de um tipo específico - pokemonsPorTipo
             meusPokemons = new PokemonGoContext();
@@ -271,7 +273,6 @@ namespace PokemonGo.Context.Utilitarios
                 return meusPokemons.PokeDex.Where(x => x.Type1.Equals(tipoPokemon)||x.Type2.Equals(tipoPokemon)).ToList();
             }
         }
-
         public List<Cidade> PrintCidadeEspecifica(int idCidade)
         {//Listar uma cidade do banco (aux para outras tabelas) - listarCidadeEspecifica
             meusPokemons = new PokemonGoContext();
@@ -286,8 +287,8 @@ namespace PokemonGo.Context.Utilitarios
         //#############//
         //PRINTAR TODOS//
         //#############//
-        public List<PokemonBag> PrintAllPokeBag() 
-        {
+        public List<PokemonBag> PrintAllPokeBag()
+        {//Listar informações de todos os pokémon do banco - todosPokemonsDaBag
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -295,8 +296,8 @@ namespace PokemonGo.Context.Utilitarios
                 return meusPokemons.PokemonBag.ToList();
             }
         }
-        public List<PokemonBagJoinDex> PrintAllPokeBagJoin() 
-        {
+        public List<PokemonBagJoinDex> PrintAllPokeBagJoin()
+        {//Listar informações de todos os pokémon do banco - todosPokemonsDaBagJoin
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -351,7 +352,6 @@ namespace PokemonGo.Context.Utilitarios
                 return BagJoinDex;
             }
         }
-        
         public List<PokeDex> PrintAllPokeDex()
         {//Listar informações de todas espécies de pokémon do banco - todosPokemonsDaDex
             meusPokemons = new PokemonGoContext();
@@ -375,8 +375,8 @@ namespace PokemonGo.Context.Utilitarios
         //##################//
         //EXCLUIR UM POKEMON//
         //##################//
-        public List<PokemonBag> TransferirPokeBag(int idPokemon) 
-        {
+        public List<PokemonBag> TransferirPokeBag(int idPokemon)
+        {//Excluir um pokémon do banco caso exista - pokemonTransferido
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -415,8 +415,8 @@ namespace PokemonGo.Context.Utilitarios
         //#############//
         //ALTERAR STATS//
         //#############//
-        public string AlterarPokeBag(int idPokemon, int novoCP, int novoHP) 
-        {
+        public bool AlterarPokeBag(int idPokemon, int novoCP, int novoHP)
+        {//Alterar informações de um pokémon - alterarStats
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -430,17 +430,16 @@ namespace PokemonGo.Context.Utilitarios
                         pokemon.CombatPoints = novoCP;
                         pokemon.HealthPoints = novoHP;
                         meusPokemons.SaveChanges();
-                        return Message.SuccessAlter;
+                        return false;
                     }
-                    else return Message.NoSuccessAlter;
+                    else return true;
                 }
                 else
-                    return Message.NoSuccessAlter;
+                    return true;
             }
         }
-
-        public string AlterarPokeBagTransferir(int idPokemon, bool novoStatus) 
-        {
+        public bool AlterarPokeBagTransferir(int idPokemon, bool novoStatus)
+        {//Alteraro status de transferir de um pokémon - alterarTransferir
             meusPokemons = new PokemonGoContext();
 
             using (meusPokemons)
@@ -451,13 +450,12 @@ namespace PokemonGo.Context.Utilitarios
                 {
                     pokemon.Transferir = novoStatus;
                     meusPokemons.SaveChanges();
-                    return Message.SuccessAlter;
+                    return false;
                 }
                 else
-                    return Message.NoSuccessAlter;
+                    return true;
             }
         }
-
         public bool AlterarPokeDex(int idPokemon, int novoCP, int novoLvl35, int novoEgg)
         {//Alterar informações de uma espécie de pokémon - alterarDados
             meusPokemons = new PokemonGoContext();
@@ -489,7 +487,6 @@ namespace PokemonGo.Context.Utilitarios
                     return true;
             }
         }
-
         public bool AlterarContagemPokemon(int idPokemon, int novaContagem)
         {//Alterar contagem de uma espécie de pokémon (auxiliar para outras tabelas) - atualizarContagem
             meusPokemons = new PokemonGoContext();
@@ -508,7 +505,6 @@ namespace PokemonGo.Context.Utilitarios
                     return true;
             }
         }
-
         public bool AlterarCidade(int idCidade, int novaContagem)
         {//Alterar contagem da cidade (aux para outras tabelas) - atualizarContagem
             meusPokemons = new PokemonGoContext();

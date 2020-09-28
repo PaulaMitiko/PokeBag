@@ -18,9 +18,8 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
-                auxiliar.AddPokeBag(pokemon);
-                result.Error = false;
-                result.Message = Message.SuccessAdd;
+                result.Error = auxiliar.AddPokeBag(pokemon);
+                result.Message = result.Error ? Message.NoSuccessAdd : Message.SuccessAdd;
 
                 return Ok(result);
             }
@@ -36,9 +35,7 @@ namespace PokemonGo.Manager.Controllers
         
         [HttpGet]
         [Route("pokemonsDaBagstring")] //Listar todos os pokémons de uma espécie  - Funcionando
-        public ActionResult MostrarPokemonsEspecie(string EspeciePokemon) //Vou ter que buscar na tabela PokeDex
-                                                                       //o id da especie ao buscar o nome dela.
-                                                                       //Mas não precisa disso agora.
+        public ActionResult MostrarPokemonsEspecie(string EspeciePokemon) 
         {
             var result = new Result<List<PokemonBagJoinDex>>();
             try
@@ -75,9 +72,7 @@ namespace PokemonGo.Manager.Controllers
 
         [HttpGet]
         [Route("pokemonsDaBag")] //Listar todos os pokémons de uma espécie  - Funcionando
-        public ActionResult MostrarPokemonsEspecie(int EspeciePokemon) //Vou ter que buscar na tabela PokeDex
-                                                                          //o id da especie ao buscar o nome dela.
-                                                                          //Mas não precisa disso agora.
+        public ActionResult MostrarPokemonsEspecie(int EspeciePokemon) 
         {
             var result = new Result<List<PokemonBag>>();
             try
@@ -199,7 +194,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemonType;
+                    result.Message = Message.NoPokemonCity;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -207,7 +202,7 @@ namespace PokemonGo.Manager.Controllers
                 else
                 {
                     result.Error = false;
-                    result.Message = Message.SuccessType;
+                    result.Message = Message.SuccessPokemonCity;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return Ok(result);
@@ -225,8 +220,7 @@ namespace PokemonGo.Manager.Controllers
 
         [HttpDelete]
         [Route("pokemonTransferido")] //Excluir um pokémon que foi transferido - Funcionando
-        public ActionResult RemoverPokemonTransferido(int idPokemon) //Vou ter que achar uma forma de encontrar o id
-                                                                     //do pokémon a ser transferido. Mas não agora.
+        public ActionResult RemoverPokemonTransferido(int idPokemon) 
         {
             var result = new Result<List<PokemonBag>>();
             try
@@ -252,7 +246,6 @@ namespace PokemonGo.Manager.Controllers
             }
         }
 
-
         [HttpPut] 
         [Route("alterarStats")] //Alterar os stats de um pokémon - Funcionando
         public ActionResult AlterarStatsDoPokemon(int idPokemon, int novoCP, int novoHP)
@@ -262,17 +255,19 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
-                result.Message = auxiliar.AlterarPokeBag(idPokemon, novoCP, novoHP);
+                result.Error = auxiliar.AlterarPokeBag(idPokemon, novoCP, novoHP);
+                result.Message = result.Error ? Message.NoSuccessAlter : Message.SuccessAlter;
+
                 return Ok(result);
-                
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+        
         [HttpPut]
-        [Route("alterarTransferir")] //Alterar os stats de um pokémon - Funcionando
+        [Route("alterarTransferir")] //Alterar o status de transferir de um pokémon - Funcionando
         public ActionResult AlterarTransferirDoPokemon(int idPokemon, bool novoStatus)
         {
             var result = new Result<List<PokemonBag>>();
@@ -280,9 +275,10 @@ namespace PokemonGo.Manager.Controllers
             try
             {
                 Utilitarios<PokemonBag> auxiliar = new Utilitarios<PokemonBag>();
-                result.Message = auxiliar.AlterarPokeBagTransferir(idPokemon, novoStatus);
+                result.Error = auxiliar.AlterarPokeBagTransferir(idPokemon, novoStatus);
+                result.Message = result.Error ? Message.NoSuccessAlter : Message.SuccessAlter;
+                
                 return Ok(result);
-
             }
             catch (Exception ex)
             {
@@ -303,7 +299,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemonType;
+                    result.Message = Message.NoSugestion;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -311,7 +307,7 @@ namespace PokemonGo.Manager.Controllers
                 else
                 {
                     result.Error = false;
-                    result.Message = Message.SuccessType;
+                    result.Message = Message.SuccessSugestion;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return Ok(result);
@@ -340,7 +336,7 @@ namespace PokemonGo.Manager.Controllers
                 if (result.Data.Count == 0)
                 {
                     result.Error = true;
-                    result.Message = Message.NoPokemonType;
+                    result.Message = Message.NoSugestion;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return BadRequest(result);
@@ -348,7 +344,7 @@ namespace PokemonGo.Manager.Controllers
                 else
                 {
                     result.Error = false;
-                    result.Message = Message.SuccessType;
+                    result.Message = Message.SuccessSugestion;
                     result.Status = System.Net.HttpStatusCode.InternalServerError;
 
                     return Ok(result);
