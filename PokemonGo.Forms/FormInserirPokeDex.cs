@@ -1,13 +1,6 @@
-﻿using Newtonsoft.Json;
-using PokemonGo.Context.Models;
-using PokemonGo.Context.Utilitarios;
+﻿using PokemonGo.Context.Models;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PokemonGo.Forms
@@ -68,21 +61,13 @@ namespace PokemonGo.Forms
                     newPokemon.Id = 0;
                 }
 
-                var newPokemonJson = JsonConvert.SerializeObject(newPokemon);
-                StringContent content = new StringContent(newPokemonJson, Encoding.UTF8, "application/json");
-
-                var httpClient = new HttpClient();
                 var URL = "http://localhost:5000/Pokedex/pokemonNovo";
-                var resultRequest = httpClient.PostAsync($"{URL}", content);
-                resultRequest.Wait();
+                var consumir = new ConsumeAPI<PokeDex>();
+                var resultBody = consumir.ConsumePostAPI(URL, newPokemon);
+               
+                MessageBox.Show(resultBody.Item1);
 
-                var result = resultRequest.Result.Content.ReadAsStringAsync();
-                result.Wait();
-
-                var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
-                MessageBox.Show(resultBody.Message);
-
-                if (!resultBody.Error)
+                if (!resultBody.Item2)
                 {
                     txt_Id.Text = "";
                     txt_Name.Text = "";

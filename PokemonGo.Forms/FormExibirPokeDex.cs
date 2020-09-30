@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json;
-using PokemonGo.Context.Models;
-using PokemonGo.Context.Utilitarios;
+﻿using PokemonGo.Context.Models;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Windows.Forms;
 
 namespace PokemonGo.Forms
@@ -16,46 +12,21 @@ namespace PokemonGo.Forms
             CarregaListaPokemon();
         }
 
+        private ConsumeAPI<PokeDex> consumir = new ConsumeAPI<PokeDex>();
+
         private void btn_Todos_Click(object sender, EventArgs e)
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokedex/todosPokemonsDaDex";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokeDex> lista = new List<PokeDex>();
-
-            foreach (var pokemon in data)
-            {
-                lista.Add(pokemon);
-            }
-
-            this.dataGridView1.DataSource = lista;
+            var data = consumir.ConsumeGetAPI(URL);
+            
+            this.dataGridView1.DataSource = data;
             this.dataGridView1.Columns["Bag"].Visible = false;
-        }
-
-        class Root
-        {
-            public List<PokeDex> Data { get; set; }
         }
 
         private void btn_Id_Click(object sender, EventArgs e)
         {
-            var httpClient = new HttpClient();
-
             var URL = "http://localhost:5000/Pokedex/todosPokemonsDaDex";
-
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
+            var data = consumir.ConsumeGetAPI(URL);
           
             int idPokemon = 0;
             foreach (var item in data)
@@ -66,58 +37,28 @@ namespace PokemonGo.Forms
                 }
             }
 
-            URL = "http://localhost:5000/Pokedex/dexDeUmPokemon";
-           
-            resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={idPokemon}");
-            resultRequest.Wait();
+            URL = $"http://localhost:5000/Pokedex/dexDeUmPokemon?EspeciePokemon={idPokemon}";
+            data = consumir.ConsumeGetAPI(URL);
 
-            result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokeDex> lista = new List<PokeDex>();
-
-            foreach (var pokemon in data)
-            {
-                lista.Add(pokemon);
-            }
-
-            this.dataGridView1.DataSource = lista;
+            this.dataGridView1.DataSource = data;
             this.dataGridView1.Columns["Bag"].Visible = false;
 
-            var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
-
-            if (resultBody.Error) MessageBox.Show(resultBody.Message);
+            if (data.Count == 0) MessageBox.Show("Você ainda não registrou esse pokémon!");
 
             box_Id.Text = "";
         }
 
         private void btn_Tipo_Click(object sender, EventArgs e)
         {
-            var httpClient = new HttpClient();
-            var URL = "http://localhost:5000/Pokedex/pokemonsPorTipo";
-            var resultRequest = httpClient.GetAsync($"{URL}?tipoPokemon={box_Tipo.Text}");
-            resultRequest.Wait();
+            var URL = $"http://localhost:5000/Pokedex/pokemonsPorTipo?tipoPokemon={box_Tipo.Text}";
+            var data = consumir.ConsumeGetAPI(URL);
 
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokeDex> lista = new List<PokeDex>();
-
-            foreach (var pokemon in data)
-            {
-                lista.Add(pokemon);
-            }
-
-            this.dataGridView1.DataSource = lista;
+            this.dataGridView1.DataSource = data;
             this.dataGridView1.Columns["Bag"].Visible = false;
 
             box_Tipo.Text = "";
 
-            var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
-
-            if (resultBody.Error) MessageBox.Show(resultBody.Message);
+            if (data.Count == 0) MessageBox.Show("Você ainda não registrou nenhum pokémon desse tipo!");
         }
 
         private void btn_Voltar_Click(object sender, EventArgs e)
@@ -132,15 +73,8 @@ namespace PokemonGo.Forms
 
         private void CarregaListaPokemon()
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokedex/todosPokemonsDaDex";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
+            var data = consumir.ConsumeGetAPI(URL);
 
             foreach (var pokemon in data)
             {

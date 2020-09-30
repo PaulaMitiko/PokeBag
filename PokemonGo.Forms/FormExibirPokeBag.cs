@@ -1,9 +1,5 @@
-﻿using Newtonsoft.Json;
-using PokemonGo.Context.Models;
-using PokemonGo.Context.Utilitarios;
+﻿using PokemonGo.Context.Models;
 using System;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Windows.Forms;
 
 namespace PokemonGo.Forms
@@ -18,64 +14,33 @@ namespace PokemonGo.Forms
 
         private void btn_ExibirTodos_Click(object sender, EventArgs e)
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokebag/todosPokemonsDaBagJoin";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
+            var consumir = new ConsumeAPI<PokemonBagJoinDex>();
+            var data = consumir.ConsumeGetAPI(URL);
 
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokemonBagJoinDex> lista = new List<PokemonBagJoinDex>();
-
-            foreach (var pokemon in data)
-            {
-                    lista.Add(pokemon);   
-            }
-
-            this.dataGridView1.DataSource = lista;
+            this.dataGridView1.DataSource = data;
             this.dataGridView1.Columns["IndividualValue"].DefaultCellStyle.Format = "P";
             this.dataGridView1.Columns["Cidade"].Visible = false;
             this.dataGridView1.Columns["PokeDex"].Visible = false;
-        }
-
-        class Root
-        {
-            public List<PokemonBagJoinDex> Data { get; set; }
         }
 
         private void btn_ExibirTipo_Click(object sender, EventArgs e)
         {
             try
             {
-                var httpClient = new HttpClient();
-                var URL = "http://localhost:5000/Pokebag/pokemonsDaBagstring";
                 var especie = box_Especie.Text;
-                var resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={especie}");
-                resultRequest.Wait();
-
-                var result = resultRequest.Result.Content.ReadAsStringAsync();
-                result.Wait();
-
-                var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-                List<PokemonBagJoinDex> lista = new List<PokemonBagJoinDex>();
-
-                foreach (var pokemon in data)
-                {
-                    lista.Add(pokemon);
-                }
-
-                this.dataGridView1.DataSource = lista;
+                var URL = $"http://localhost:5000/Pokebag/pokemonsDaBagstring?EspeciePokemon={especie}";
+                var consumir = new ConsumeAPI<PokemonBagJoinDex>();
+                var data = consumir.ConsumeGetAPI(URL);
+                
+                this.dataGridView1.DataSource = data;
                 this.dataGridView1.Columns["IndividualValue"].DefaultCellStyle.Format = "P";
                 this.dataGridView1.Columns["Cidade"].Visible = false;
                 this.dataGridView1.Columns["PokeDex"].Visible = false;
 
                 box_Especie.Text = "";
-
-                var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
-
-                if (resultBody.Error) MessageBox.Show(resultBody.Message);
+                
+                if (data.Count == 0) MessageBox.Show("Você ainda não capturou nenhum pokémon dessa espécie!");
             }
             catch (Exception ex) 
             {
@@ -95,24 +60,14 @@ namespace PokemonGo.Forms
 
         private void CarregaListaPokemon()
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokedex/todosPokemonsDaDex";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root2>(result.Result).Data;
+            var consumir = new ConsumeAPI<PokeDex>();
+            var data = consumir.ConsumeGetAPI(URL);
 
             foreach (var pokemon in data)
             {
                 box_Especie.Items.Add(pokemon.Name);
             }
-        }
-        class Root2
-        {
-            public List<PokeDex> Data { get; set; }
         }
     }
 }

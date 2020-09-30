@@ -1,10 +1,6 @@
-﻿using Newtonsoft.Json;
-using PokemonGo.Context.Models;
-using PokemonGo.Context.Utilitarios;
+﻿using PokemonGo.Context.Models;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PokemonGo.Forms
@@ -20,75 +16,71 @@ namespace PokemonGo.Forms
 
         private void btn_Salvar_Click(object sender, EventArgs e)
         {
-            int idPoke = AtualizarContagemPokeDex(box_NoPokemon.Text, out int? contagemPokemon, out int cp35);
-            int idCity = AtualizarContagemCidade(box_Cidade.Text, out int? contagemCidade);
+            int? contagemPokemon = 0;
+            int cp35 = 0;
+            int? contagemCidade = 0;
+            int idPoke = 0;
+            int idCity = 0;
 
             int.TryParse(txt_CP.Text, out int combatPoints);
             int.TryParse(txt_HP.Text, out int healthPoints);
 
+
             PokemonBag newPokemon = new PokemonBag()
             {
-                IdPokemonType = idPoke,
                 CombatPoints = combatPoints,
                 HealthPoints = healthPoints,
                 Attack = Convert.ToInt32(nbr_Attack.Value),
                 Defense = Convert.ToInt32(nbr_Defense.Value),
                 Stamina = Convert.ToInt32(nbr_Stamina.Value),
-                IdCidade = idCity,
                 DataCaptura = dt_DataCaptura.Value,
                 Evento = txt_Evento.Text,
                 Sombroso = txt_Sombroso.Text,
                 FastAttack = txt_Fast.Text,
                 ChargeAttack = txt_Charge.Text,
+                Shiny = false
             };
 
             if (btn_ShinySim.Checked) newPokemon.Shiny = true;
             if (btn_ShinyNao.Checked) newPokemon.Shiny = false;
 
-            newPokemon.DisponivelTroca = CriteriosTroca(newPokemon);
-            newPokemon.Transferir = CriteriosTransferencia(newPokemon, contagemCidade, contagemPokemon, cp35);
-
             if (combatPoints < 10)
             {
                 newPokemon.IdPokemonType = 0;
                 txt_CP.Text = "";
-                MessageBox.Show("Valor de CP inválido!\nPor gentileza, insira um número inteiro.");
+                MessageBox.Show("Valor de CP inválido!\nPor gentileza, insira um número inteiro maior que 9.");
             }
             if (healthPoints < 10)
             {
                 newPokemon.IdPokemonType = 0;
                 txt_HP.Text = "";
-                MessageBox.Show("Valor de HP inválido!\nPor gentileza, insira um número inteiro.");
+                MessageBox.Show("Valor de HP inválido!\nPor gentileza, insira um número inteiro maior que 9.");
+            }
+            else 
+            {
+                idPoke = AtualizarContagemPokeDex(box_NoPokemon.Text, ref contagemPokemon, ref cp35);
+                idCity = AtualizarContagemCidade(box_Cidade.Text, ref contagemCidade);
+
+                newPokemon.IdPokemonType = idPoke;
+                newPokemon.IdCidade = idCity;
+
+                newPokemon.DisponivelTroca = CriteriosTroca(newPokemon);
+                newPokemon.Transferir = CriteriosTransferencia(newPokemon, contagemCidade, contagemPokemon, cp35);
             }
 
             try
             { 
-                var newPokemonJson = JsonConvert.SerializeObject(newPokemon);
-                StringContent content = new StringContent(newPokemonJson, Encoding.UTF8, "application/json");
-
-                var httpClient = new HttpClient();
                 var URL = "http://localhost:5000/Pokebag/pokemonCapturado";
-                var resultRequest = httpClient.PostAsync($"{URL}", content);
-                resultRequest.Wait();
-
-                var result = resultRequest.Result.Content.ReadAsStringAsync();
-                result.Wait();
-
-                var resultBody = JsonConvert.DeserializeObject<Result<List<PokemonBag>>>(result.Result);
-                MessageBox.Show(resultBody.Message);
+                var consumir = new ConsumeAPI<PokemonBag>();
+                var resultBody = consumir.ConsumePostAPI(URL, newPokemon);
+                
+                MessageBox.Show(resultBody.Item1);
 
                 //Atualizar status de transferir dos anteriores dado a nova inserção 
                 if (contagemCidade > 1 || contagemPokemon > 1)
                 {
-                    httpClient = new HttpClient();
                     URL = "http://localhost:5000/Pokebag/todosPokemonsDaBag";
-                    resultRequest = httpClient.GetAsync(URL);
-                    resultRequest.Wait();
-
-                    result = resultRequest.Result.Content.ReadAsStringAsync();
-                    result.Wait();
-
-                    var data = JsonConvert.DeserializeObject<Root3>(result.Result).Data;
+                    var data = consumir.ConsumeGetAPI(URL);
                     List<PokemonBag> lista = new List<PokemonBag>();
 
                     foreach (var pokemon in data)
@@ -100,40 +92,30 @@ namespace PokemonGo.Forms
                         }
                         else if (pokemon.IdCidade == idCity)
                         {
-                            URL = "http://localhost:5000/Pokedex/dexDeUmPokemon";
-                            resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={pokemon.IdPokemonType}");
-                            resultRequest.Wait();
-
-                            result = resultRequest.Result.Content.ReadAsStringAsync();
-                            result.Wait();
-
-                            var dataAux = JsonConvert.DeserializeObject<Root>(result.Result).Data;
+                            URL = $"http://localhost:5000/Pokedex/dexDeUmPokemon?EspeciePokemon={pokemon.IdPokemonType}";
+                            var consumirAux = new ConsumeAPI<PokeDex>();
+                            var dataAux = consumirAux.ConsumeGetAPI(URL);
+                            
                             newTransf = CriteriosTransferencia(pokemon, contagemCidade, dataAux[0].QtdePokemon, dataAux[0].CPLvl35);
                         }
                         else if (pokemon.IdPokemonType == idPoke)
                         {
-                            URL = "http://localhost:5000/Cidades/listarCidadeEspecifica";
-                            resultRequest = httpClient.GetAsync($"{URL}?idCidade={pokemon.IdCidade}");
-                            resultRequest.Wait();
-
-                            result = resultRequest.Result.Content.ReadAsStringAsync();
-                            result.Wait();
-
-                            var dataAux = JsonConvert.DeserializeObject<Root2>(result.Result).Data;
+                            URL = $"http://localhost:5000/Cidades/listarCidadeEspecifica?idCidade={pokemon.IdCidade}";
+                            var consumirAux = new ConsumeAPI<Cidade>();
+                            var dataAux = consumirAux.ConsumeGetAPI(URL);
+                            
                             newTransf = CriteriosTransferencia(pokemon, dataAux[0].QtdePokemons, contagemPokemon, cp35);
                         }
                         if (pokemon.Transferir != newTransf)
                         {
-                            httpClient = new HttpClient();
-                            URL = "http://localhost:5000/Pokebag/alterarTransferir";
-                            resultRequest = httpClient.PutAsync($"{URL}?idPokemon={pokemon.Id}&novoStatus={newTransf}", null);
-                            resultRequest.Wait();
+                            URL = $"http://localhost:5000/Pokebag/alterarTransferir?idPokemon={pokemon.Id}&novoStatus={newTransf}";
+                            consumir.ConsumePutAPI(URL);
                         }
                     }
                 }
 
                 //Limpar boxes
-                if (!resultBody.Error)
+                if (!resultBody.Item2)
                 {
                     btn_ShinyNao.Checked = false;
                     btn_ShinySim.Checked = false;
@@ -168,24 +150,11 @@ namespace PokemonGo.Forms
 
         private bool CriteriosTroca(PokemonBag pokemon)
         {
-            var httpClient = new HttpClient();
-            var URL = "http://localhost:5000/Pokedex/dexDeUmPokemon";
-
-            var resultRequest = httpClient.GetAsync($"{URL}?EspeciePokemon={pokemon.IdPokemonType}");
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokeDex> lista = new List<PokeDex>();
-
-            foreach (var especie in data)
-            {
-                lista.Add(especie);
-            }
-
-            if (pokemon.IndividualValue < 0.4 && pokemon.CombatPoints >= lista[0].CPLvl35) return true;
+            var URL = $"http://localhost:5000/Pokedex/dexDeUmPokemon?EspeciePokemon={pokemon.IdPokemonType}";
+            var consumir = new ConsumeAPI<PokeDex>();
+            var data = consumir.ConsumeGetAPI(URL);
+            
+            if (pokemon.IndividualValue < 0.4 && pokemon.CombatPoints >= data[0].CPLvl35) return true;
             else return false;
         }
 
@@ -204,60 +173,43 @@ namespace PokemonGo.Forms
             return true;
         }
 
-        private int AtualizarContagemCidade(string cidade, out int? contagemCidade)
+        private int AtualizarContagemCidade(string cidade, ref int? contagemCidade)
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Cidades/listarCidades";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
 
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data2 = JsonConvert.DeserializeObject<Root2>(result.Result).Data;
-            List<Cidade> lista2 = new List<Cidade>();
+            var consumir = new ConsumeAPI<Cidade>();
+            var data = consumir.ConsumeGetAPI(URL);
+            
             int idCidade = 0;
-            int? auxcontagemCidade = 0;
+            contagemCidade = 0;
 
-            foreach (var city in data2)
+            foreach (var city in data)
             {
-                lista2.Add(city);
                 if (city.NomeCidade == cidade)
                 {
                     idCidade = city.Id;
-                    auxcontagemCidade = city.QtdePokemons + 1;
+                    contagemCidade = city.QtdePokemons + 1;
                 }
             }
 
-            contagemCidade = auxcontagemCidade;
-
-            URL = "http://localhost:5000/Cidades/atualizarContagem";
-            resultRequest = httpClient.PutAsync($"{URL}?idCidade={idCidade}&novaContagem={contagemCidade}", null);
-            resultRequest.Wait();
+            URL = $"http://localhost:5000/Cidades/atualizarContagem?idCidade={idCidade}&novaContagem={contagemCidade}";
+            consumir.ConsumePutAPI(URL);
 
             return idCidade;
         }
 
-        private int AtualizarContagemPokeDex(string Pokemon, out int? contagemPokemon, out int cpLvl35)
+        private int AtualizarContagemPokeDex(string Pokemon, ref int? contagemPokemon, ref int cpLvl35)
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokedex/todosPokemonsDaDex";
-
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
-            List<PokeDex> lista = new List<PokeDex>();
+            var consumir = new ConsumeAPI<PokeDex>();
+            var data = consumir.ConsumeGetAPI(URL);
+            
             contagemPokemon = 0;
             cpLvl35 = 0;
             int idPokemon = 0;
 
             foreach (var especie in data)
             {
-                lista.Add(especie);
                 if (especie.Name == Pokemon) 
                 {
                     contagemPokemon = especie.QtdePokemon + 1;
@@ -265,24 +217,17 @@ namespace PokemonGo.Forms
                     idPokemon = especie.Id;
                 }
             }
-
-            URL = "http://localhost:5000/Pokedex/atualizarContagem";
-            resultRequest = httpClient.PutAsync($"{URL}?idPokemon={idPokemon}&novaContagem={contagemPokemon}", null);
-            resultRequest.Wait();
+            
+            URL = $"http://localhost:5000/Pokedex/atualizarContagem?idPokemon={idPokemon}&novaContagem={contagemPokemon}";
+            consumir.ConsumePutAPI(URL);
 
             return idPokemon;
         }
         private void CarregaListaPokemon()
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Pokedex/todosPokemonsDaDex";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root>(result.Result).Data;
+            var consumir = new ConsumeAPI<PokeDex>();
+            var data = consumir.ConsumeGetAPI(URL); 
 
             foreach (var pokemon in data)
             {
@@ -291,32 +236,14 @@ namespace PokemonGo.Forms
         }
         private void CarregaListaCidade()
         {
-            var httpClient = new HttpClient();
             var URL = "http://localhost:5000/Cidades/listarCidades";
-            var resultRequest = httpClient.GetAsync(URL);
-            resultRequest.Wait();
-
-            var result = resultRequest.Result.Content.ReadAsStringAsync();
-            result.Wait();
-
-            var data = JsonConvert.DeserializeObject<Root2>(result.Result).Data;
+            var consumir = new ConsumeAPI<Cidade>();
+            var data = consumir.ConsumeGetAPI(URL);
 
             foreach (var cidade in data)
             {
                 box_Cidade.Items.Add(cidade.NomeCidade);
             }
-        }
-        private class Root
-        {
-            public List<PokeDex> Data { get; set; }
-        }
-        private class Root2
-        {
-            public List<Cidade> Data { get; set; }
-        }
-        private class Root3
-        {
-            public List<PokemonBag> Data { get; set; }
         }
     }
 }
