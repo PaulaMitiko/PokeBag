@@ -52,7 +52,7 @@
             this.btn_Transf.Location = new System.Drawing.Point(256, 404);
             this.btn_Transf.Name = "btn_Transf";
             this.btn_Transf.Size = new System.Drawing.Size(262, 34);
-            this.btn_Transf.TabIndex = 1;
+            this.btn_Transf.TabIndex = 2;
             this.btn_Transf.Text = "Sugestões de Transferência";
             this.btn_Transf.UseVisualStyleBackColor = true;
             this.btn_Transf.Click += new System.EventHandler(this.btn_Transf_Click);
@@ -72,7 +72,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(13, 404);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
-            this.btn_Sair.TabIndex = 1;
+            this.btn_Sair.TabIndex = 5;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
@@ -82,7 +82,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(13, 364);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
-            this.btn_Voltar.TabIndex = 1;
+            this.btn_Voltar.TabIndex = 4;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -92,7 +92,7 @@
             this.btn_Excluir.Location = new System.Drawing.Point(598, 404);
             this.btn_Excluir.Name = "btn_Excluir";
             this.btn_Excluir.Size = new System.Drawing.Size(190, 34);
-            this.btn_Excluir.TabIndex = 1;
+            this.btn_Excluir.TabIndex = 3;
             this.btn_Excluir.Text = "Excluir um pokémon";
             this.btn_Excluir.UseVisualStyleBackColor = true;
             this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);

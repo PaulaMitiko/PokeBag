@@ -85,7 +85,7 @@
             this.btn_Id.Location = new System.Drawing.Point(522, 380);
             this.btn_Id.Name = "btn_Id";
             this.btn_Id.Size = new System.Drawing.Size(190, 34);
-            this.btn_Id.TabIndex = 2;
+            this.btn_Id.TabIndex = 3;
             this.btn_Id.Text = "Consultar por Id";
             this.btn_Id.UseVisualStyleBackColor = true;
             this.btn_Id.Click += new System.EventHandler(this.btn_Id_Click);
@@ -95,7 +95,7 @@
             this.btn_Tipo.Location = new System.Drawing.Point(522, 418);
             this.btn_Tipo.Name = "btn_Tipo";
             this.btn_Tipo.Size = new System.Drawing.Size(190, 34);
-            this.btn_Tipo.TabIndex = 2;
+            this.btn_Tipo.TabIndex = 5;
             this.btn_Tipo.Text = "Consultar por Tipo";
             this.btn_Tipo.UseVisualStyleBackColor = true;
             this.btn_Tipo.Click += new System.EventHandler(this.btn_Tipo_Click);
@@ -132,7 +132,7 @@
             this.btn_Todos.Location = new System.Drawing.Point(522, 340);
             this.btn_Todos.Name = "btn_Todos";
             this.btn_Todos.Size = new System.Drawing.Size(190, 34);
-            this.btn_Todos.TabIndex = 2;
+            this.btn_Todos.TabIndex = 1;
             this.btn_Todos.Text = "Consultar Todos";
             this.btn_Todos.UseVisualStyleBackColor = true;
             this.btn_Todos.Click += new System.EventHandler(this.btn_Todos_Click);
@@ -142,7 +142,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(882, 416);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
-            this.btn_Sair.TabIndex = 5;
+            this.btn_Sair.TabIndex = 7;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
@@ -152,7 +152,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(882, 380);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
-            this.btn_Voltar.TabIndex = 5;
+            this.btn_Voltar.TabIndex = 6;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -163,7 +163,7 @@
             this.box_Id.Location = new System.Drawing.Point(325, 377);
             this.box_Id.Name = "box_Id";
             this.box_Id.Size = new System.Drawing.Size(182, 33);
-            this.box_Id.TabIndex = 6;
+            this.box_Id.TabIndex = 2;
             // 
             // FormExibirPokeDex
             // 

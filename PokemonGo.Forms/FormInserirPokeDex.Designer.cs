@@ -139,21 +139,21 @@
             this.txt_Id.Location = new System.Drawing.Point(143, 71);
             this.txt_Id.Name = "txt_Id";
             this.txt_Id.Size = new System.Drawing.Size(307, 31);
-            this.txt_Id.TabIndex = 3;
+            this.txt_Id.TabIndex = 2;
             // 
             // txt_Name
             // 
             this.txt_Name.Location = new System.Drawing.Point(143, 108);
             this.txt_Name.Name = "txt_Name";
             this.txt_Name.Size = new System.Drawing.Size(307, 31);
-            this.txt_Name.TabIndex = 4;
+            this.txt_Name.TabIndex = 3;
             // 
             // txt_CPMax
             // 
             this.txt_CPMax.Location = new System.Drawing.Point(503, 336);
             this.txt_CPMax.Name = "txt_CPMax";
             this.txt_CPMax.Size = new System.Drawing.Size(285, 31);
-            this.txt_CPMax.TabIndex = 10;
+            this.txt_CPMax.TabIndex = 9;
             // 
             // box_Tipo1
             // 
@@ -180,7 +180,7 @@
             this.box_Tipo1.Location = new System.Drawing.Point(143, 142);
             this.box_Tipo1.Name = "box_Tipo1";
             this.box_Tipo1.Size = new System.Drawing.Size(307, 33);
-            this.box_Tipo1.TabIndex = 5;
+            this.box_Tipo1.TabIndex = 4;
             // 
             // box_Tipo2
             // 
@@ -207,7 +207,7 @@
             this.box_Tipo2.Location = new System.Drawing.Point(143, 181);
             this.box_Tipo2.Name = "box_Tipo2";
             this.box_Tipo2.Size = new System.Drawing.Size(307, 33);
-            this.box_Tipo2.TabIndex = 6;
+            this.box_Tipo2.TabIndex = 5;
             // 
             // box_Evol
             // 
@@ -222,7 +222,7 @@
             this.box_Evol.Location = new System.Drawing.Point(503, 219);
             this.box_Evol.Name = "box_Evol";
             this.box_Evol.Size = new System.Drawing.Size(285, 33);
-            this.box_Evol.TabIndex = 7;
+            this.box_Evol.TabIndex = 6;
             // 
             // box_Buddy
             // 
@@ -235,7 +235,7 @@
             this.box_Buddy.Location = new System.Drawing.Point(503, 258);
             this.box_Buddy.Name = "box_Buddy";
             this.box_Buddy.Size = new System.Drawing.Size(285, 33);
-            this.box_Buddy.TabIndex = 8;
+            this.box_Buddy.TabIndex = 7;
             // 
             // box_Egg
             // 
@@ -249,14 +249,14 @@
             this.box_Egg.Location = new System.Drawing.Point(503, 297);
             this.box_Egg.Name = "box_Egg";
             this.box_Egg.Size = new System.Drawing.Size(285, 33);
-            this.box_Egg.TabIndex = 9;
+            this.box_Egg.TabIndex = 8;
             // 
             // btn_Save
             // 
             this.btn_Save.Location = new System.Drawing.Point(503, 409);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(285, 34);
-            this.btn_Save.TabIndex = 12;
+            this.btn_Save.TabIndex = 11;
             this.btn_Save.Text = "Salvar";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -266,7 +266,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(158, 409);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
-            this.btn_Sair.TabIndex = 14;
+            this.btn_Sair.TabIndex = 13;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
@@ -276,7 +276,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(25, 409);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
-            this.btn_Voltar.TabIndex = 13;
+            this.btn_Voltar.TabIndex = 12;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -286,7 +286,7 @@
             this.txt_Lvl35.Location = new System.Drawing.Point(503, 373);
             this.txt_Lvl35.Name = "txt_Lvl35";
             this.txt_Lvl35.Size = new System.Drawing.Size(285, 31);
-            this.txt_Lvl35.TabIndex = 11;
+            this.txt_Lvl35.TabIndex = 10;
             // 
             // lbl_Lvl35
             // 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.box_Especie = new System.Windows.Forms.ComboBox();
             this.btn_ExibirTipo = new System.Windows.Forms.Button();
             this.lbl_Título = new System.Windows.Forms.Label();
             this.btn_ExibirTodos = new System.Windows.Forms.Button();
@@ -36,7 +37,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btn_Voltar = new System.Windows.Forms.Button();
             this.btn_Sair = new System.Windows.Forms.Button();
-            this.box_Especie = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,14 +49,22 @@
             this.panel1.Location = new System.Drawing.Point(3, 401);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(603, 50);
-            this.panel1.TabIndex = 7;
+            this.panel1.TabIndex = 2;
+            // 
+            // box_Especie
+            // 
+            this.box_Especie.FormattingEnabled = true;
+            this.box_Especie.Location = new System.Drawing.Point(239, 12);
+            this.box_Especie.Name = "box_Especie";
+            this.box_Especie.Size = new System.Drawing.Size(182, 33);
+            this.box_Especie.TabIndex = 2;
             // 
             // btn_ExibirTipo
             // 
             this.btn_ExibirTipo.Location = new System.Drawing.Point(427, 13);
             this.btn_ExibirTipo.Name = "btn_ExibirTipo";
             this.btn_ExibirTipo.Size = new System.Drawing.Size(176, 34);
-            this.btn_ExibirTipo.TabIndex = 0;
+            this.btn_ExibirTipo.TabIndex = 3;
             this.btn_ExibirTipo.Text = "Exibir Um Tipo";
             this.btn_ExibirTipo.UseVisualStyleBackColor = true;
             this.btn_ExibirTipo.Click += new System.EventHandler(this.btn_ExibirTipo_Click);
@@ -68,7 +76,7 @@
             this.lbl_Título.Location = new System.Drawing.Point(229, 11);
             this.lbl_Título.Name = "lbl_Título";
             this.lbl_Título.Size = new System.Drawing.Size(333, 38);
-            this.lbl_Título.TabIndex = 1;
+            this.lbl_Título.TabIndex = 0;
             this.lbl_Título.Text = "Exibir Pokémons da Bag";
             // 
             // btn_ExibirTodos
@@ -76,7 +84,7 @@
             this.btn_ExibirTodos.Location = new System.Drawing.Point(430, 374);
             this.btn_ExibirTodos.Name = "btn_ExibirTodos";
             this.btn_ExibirTodos.Size = new System.Drawing.Size(176, 34);
-            this.btn_ExibirTodos.TabIndex = 0;
+            this.btn_ExibirTodos.TabIndex = 1;
             this.btn_ExibirTodos.Text = "Exibir Todos";
             this.btn_ExibirTodos.UseVisualStyleBackColor = true;
             this.btn_ExibirTodos.Click += new System.EventHandler(this.btn_ExibirTodos_Click);
@@ -97,7 +105,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(785, 303);
-            this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.Text = "dataGridView1";
             // 
             // btn_Voltar
@@ -105,7 +113,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(612, 374);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(176, 34);
-            this.btn_Voltar.TabIndex = 0;
+            this.btn_Voltar.TabIndex = 4;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -115,18 +123,10 @@
             this.btn_Sair.Location = new System.Drawing.Point(612, 414);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(176, 34);
-            this.btn_Sair.TabIndex = 0;
+            this.btn_Sair.TabIndex = 5;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
-            // 
-            // box_Especie
-            // 
-            this.box_Especie.FormattingEnabled = true;
-            this.box_Especie.Location = new System.Drawing.Point(239, 12);
-            this.box_Especie.Name = "box_Especie";
-            this.box_Especie.Size = new System.Drawing.Size(182, 33);
-            this.box_Especie.TabIndex = 1;
             // 
             // FormExibirPokeBag
             // 

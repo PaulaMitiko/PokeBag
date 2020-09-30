@@ -60,7 +60,7 @@
             this.btn_PokeDex.Location = new System.Drawing.Point(251, 188);
             this.btn_PokeDex.Name = "btn_PokeDex";
             this.btn_PokeDex.Size = new System.Drawing.Size(299, 34);
-            this.btn_PokeDex.TabIndex = 1;
+            this.btn_PokeDex.TabIndex = 2;
             this.btn_PokeDex.Text = "Utilizar a PokeDex";
             this.btn_PokeDex.UseVisualStyleBackColor = true;
             this.btn_PokeDex.Click += new System.EventHandler(this.btn_PokeDex_Click);
@@ -70,7 +70,7 @@
             this.btn_Cidade.Location = new System.Drawing.Point(251, 249);
             this.btn_Cidade.Name = "btn_Cidade";
             this.btn_Cidade.Size = new System.Drawing.Size(299, 34);
-            this.btn_Cidade.TabIndex = 1;
+            this.btn_Cidade.TabIndex = 3;
             this.btn_Cidade.Text = "Utilizar minha lista de Cidades";
             this.btn_Cidade.UseVisualStyleBackColor = true;
             this.btn_Cidade.Click += new System.EventHandler(this.btn_Cidade_Click);
@@ -80,7 +80,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(344, 350);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
-            this.btn_Sair.TabIndex = 1;
+            this.btn_Sair.TabIndex = 4;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);

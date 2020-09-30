@@ -78,7 +78,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(676, 277);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
-            this.btn_Sair.TabIndex = 4;
+            this.btn_Sair.TabIndex = 5;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);

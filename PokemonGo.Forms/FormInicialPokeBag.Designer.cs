@@ -63,7 +63,7 @@
             this.btn_Excluir.Location = new System.Drawing.Point(250, 290);
             this.btn_Excluir.Name = "btn_Excluir";
             this.btn_Excluir.Size = new System.Drawing.Size(293, 56);
-            this.btn_Excluir.TabIndex = 1;
+            this.btn_Excluir.TabIndex = 4;
             this.btn_Excluir.Text = "Excluir um pokémon transferido";
             this.btn_Excluir.UseVisualStyleBackColor = true;
             this.btn_Excluir.Click += new System.EventHandler(this.btn_Excluir_Click);
@@ -73,7 +73,7 @@
             this.btn_Alterar.Location = new System.Drawing.Point(250, 228);
             this.btn_Alterar.Name = "btn_Alterar";
             this.btn_Alterar.Size = new System.Drawing.Size(293, 56);
-            this.btn_Alterar.TabIndex = 1;
+            this.btn_Alterar.TabIndex = 3;
             this.btn_Alterar.Text = "Alterar os stats de um pokémon";
             this.btn_Alterar.UseVisualStyleBackColor = true;
             this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
@@ -83,7 +83,7 @@
             this.btn_Exibir.Location = new System.Drawing.Point(250, 166);
             this.btn_Exibir.Name = "btn_Exibir";
             this.btn_Exibir.Size = new System.Drawing.Size(293, 56);
-            this.btn_Exibir.TabIndex = 1;
+            this.btn_Exibir.TabIndex = 2;
             this.btn_Exibir.Text = "Consultar pokémons capturados";
             this.btn_Exibir.UseVisualStyleBackColor = true;
             this.btn_Exibir.Click += new System.EventHandler(this.btn_Exibir_Click);
@@ -93,7 +93,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(12, 450);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(109, 41);
-            this.btn_Voltar.TabIndex = 1;
+            this.btn_Voltar.TabIndex = 6;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -103,7 +103,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(138, 450);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(109, 40);
-            this.btn_Sair.TabIndex = 1;
+            this.btn_Sair.TabIndex = 7;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
@@ -113,7 +113,7 @@
             this.btn_Sugestao.Location = new System.Drawing.Point(250, 352);
             this.btn_Sugestao.Name = "btn_Sugestao";
             this.btn_Sugestao.Size = new System.Drawing.Size(293, 56);
-            this.btn_Sugestao.TabIndex = 2;
+            this.btn_Sugestao.TabIndex = 5;
             this.btn_Sugestao.Text = "Sugestões de troca e transferência";
             this.btn_Sugestao.UseVisualStyleBackColor = true;
             this.btn_Sugestao.Click += new System.EventHandler(this.btn_Sugestao_Click);

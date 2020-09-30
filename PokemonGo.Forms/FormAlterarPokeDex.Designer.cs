@@ -52,7 +52,7 @@
             this.txt_Id.Location = new System.Drawing.Point(457, 95);
             this.txt_Id.Name = "txt_Id";
             this.txt_Id.Size = new System.Drawing.Size(182, 31);
-            this.txt_Id.TabIndex = 0;
+            this.txt_Id.TabIndex = 2;
             // 
             // lbl_Id
             // 
@@ -87,14 +87,14 @@
             this.txt_CP.Location = new System.Drawing.Point(457, 137);
             this.txt_CP.Name = "txt_CP";
             this.txt_CP.Size = new System.Drawing.Size(182, 31);
-            this.txt_CP.TabIndex = 0;
+            this.txt_CP.TabIndex = 3;
             // 
             // btn_Salvar
             // 
             this.btn_Salvar.Location = new System.Drawing.Point(289, 318);
             this.btn_Salvar.Name = "btn_Salvar";
             this.btn_Salvar.Size = new System.Drawing.Size(190, 34);
-            this.btn_Salvar.TabIndex = 2;
+            this.btn_Salvar.TabIndex = 6;
             this.btn_Salvar.Text = "Salvar alteração";
             this.btn_Salvar.UseVisualStyleBackColor = true;
             this.btn_Salvar.Click += new System.EventHandler(this.btn_Salvar_Click);
@@ -104,7 +104,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(676, 404);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(112, 34);
-            this.btn_Sair.TabIndex = 2;
+            this.btn_Sair.TabIndex = 8;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);
@@ -114,7 +114,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(676, 364);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(112, 34);
-            this.btn_Voltar.TabIndex = 2;
+            this.btn_Voltar.TabIndex = 7;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -133,7 +133,7 @@
             this.txt_Lvl35.Location = new System.Drawing.Point(457, 177);
             this.txt_Lvl35.Name = "txt_Lvl35";
             this.txt_Lvl35.Size = new System.Drawing.Size(182, 31);
-            this.txt_Lvl35.TabIndex = 0;
+            this.txt_Lvl35.TabIndex = 4;
             // 
             // lbl_Consulta
             // 
@@ -166,7 +166,7 @@
             this.box_Egg.Location = new System.Drawing.Point(318, 17);
             this.box_Egg.Name = "box_Egg";
             this.box_Egg.Size = new System.Drawing.Size(182, 33);
-            this.box_Egg.TabIndex = 4;
+            this.box_Egg.TabIndex = 5;
             // 
             // panel1
             // 

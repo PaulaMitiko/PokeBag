@@ -90,21 +90,21 @@
             this.txt_CP.Location = new System.Drawing.Point(337, 140);
             this.txt_CP.Name = "txt_CP";
             this.txt_CP.Size = new System.Drawing.Size(276, 31);
-            this.txt_CP.TabIndex = 3;
+            this.txt_CP.TabIndex = 4;
             // 
             // txt_HP
             // 
             this.txt_HP.Location = new System.Drawing.Point(337, 184);
             this.txt_HP.Name = "txt_HP";
             this.txt_HP.Size = new System.Drawing.Size(276, 31);
-            this.txt_HP.TabIndex = 3;
+            this.txt_HP.TabIndex = 5;
             // 
             // btn_Save
             // 
             this.btn_Save.Location = new System.Drawing.Point(279, 257);
             this.btn_Save.Name = "btn_Save";
             this.btn_Save.Size = new System.Drawing.Size(179, 34);
-            this.btn_Save.TabIndex = 4;
+            this.btn_Save.TabIndex = 6;
             this.btn_Save.Text = "Salvar Alterações";
             this.btn_Save.UseVisualStyleBackColor = true;
             this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
@@ -114,7 +114,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(609, 358);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(179, 34);
-            this.btn_Voltar.TabIndex = 4;
+            this.btn_Voltar.TabIndex = 7;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -124,7 +124,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(609, 404);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(179, 34);
-            this.btn_Sair.TabIndex = 4;
+            this.btn_Sair.TabIndex = 8;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);

@@ -61,7 +61,7 @@
             this.btn_Alterar.Location = new System.Drawing.Point(211, 158);
             this.btn_Alterar.Name = "btn_Alterar";
             this.btn_Alterar.Size = new System.Drawing.Size(379, 34);
-            this.btn_Alterar.TabIndex = 1;
+            this.btn_Alterar.TabIndex = 2;
             this.btn_Alterar.Text = "Alterardados de um Pokémon";
             this.btn_Alterar.UseVisualStyleBackColor = true;
             this.btn_Alterar.Click += new System.EventHandler(this.btn_Alterar_Click);
@@ -71,7 +71,7 @@
             this.btn_Exibir.Location = new System.Drawing.Point(211, 214);
             this.btn_Exibir.Name = "btn_Exibir";
             this.btn_Exibir.Size = new System.Drawing.Size(379, 34);
-            this.btn_Exibir.TabIndex = 1;
+            this.btn_Exibir.TabIndex = 3;
             this.btn_Exibir.Text = "Consultar Pokémons da PokeDex";
             this.btn_Exibir.UseVisualStyleBackColor = true;
             this.btn_Exibir.Click += new System.EventHandler(this.btn_Exibir_Click);
@@ -81,7 +81,7 @@
             this.btn_Voltar.Location = new System.Drawing.Point(211, 328);
             this.btn_Voltar.Name = "btn_Voltar";
             this.btn_Voltar.Size = new System.Drawing.Size(379, 34);
-            this.btn_Voltar.TabIndex = 1;
+            this.btn_Voltar.TabIndex = 4;
             this.btn_Voltar.Text = "Voltar";
             this.btn_Voltar.UseVisualStyleBackColor = true;
             this.btn_Voltar.Click += new System.EventHandler(this.btn_Voltar_Click);
@@ -91,7 +91,7 @@
             this.btn_Sair.Location = new System.Drawing.Point(211, 378);
             this.btn_Sair.Name = "btn_Sair";
             this.btn_Sair.Size = new System.Drawing.Size(379, 34);
-            this.btn_Sair.TabIndex = 1;
+            this.btn_Sair.TabIndex = 5;
             this.btn_Sair.Text = "Sair";
             this.btn_Sair.UseVisualStyleBackColor = true;
             this.btn_Sair.Click += new System.EventHandler(this.btn_Sair_Click);

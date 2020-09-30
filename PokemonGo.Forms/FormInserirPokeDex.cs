@@ -77,6 +77,7 @@ namespace PokemonGo.Forms
                     box_Buddy.Text = "";
                     box_Egg.Text = "";
                     txt_CPMax.Text = "";
+                    txt_Lvl35.Text = "";
                 }
             }
             catch (Exception ex) 
